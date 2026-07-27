@@ -69,7 +69,7 @@ export const agencyData = {
     {
       id: 2,
       category: "Web Design, Video call, Software",
-      title: "Jabber",
+      title: "Video Calling Website - Jabber",
       description:
         "WEATHY is a modern and clean mobile app project based on the weather app. The UI Kit gives you the necessary screens for creating stunning iOS screens and applying them to any weather app.",
       image: "/agency/images/portfolio/jabber.png",
