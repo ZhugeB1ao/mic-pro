@@ -106,7 +106,7 @@ const defaultColumns = [
 ];
 
 const defaultBottom = {
-  type: "text",
+  type: "node",
   content: (
     <div className="flex items-center justify-between gap-4 sm:flex-row">
       <ul className="flex flex-wrap gap-4">
@@ -204,7 +204,7 @@ function FooterBottom({ bottom }) {
     );
   }
 
-  if (bottom.type === "node" && bottom.content) {
+  if ((bottom.type === "node" || typeof bottom.content === "object") && bottom.content) {
     return <>{bottom.content}</>;
   }
 

@@ -22,7 +22,7 @@ export default function Header({
 }) {
   return (
     <header
-      className={`border-b border-slate-200 bg-white ${className}`.trim()}
+      className={`bg-transparent absolute inset-x-0 top-0 z-50 ${className}`.trim()}
     >
       <Container className="header">
         <div className="flex items-center justify-between py-4">
@@ -42,16 +42,15 @@ export default function Header({
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-900 transition-colors hover:text-blue-600"
+                className="inline-flex items-center gap-1 text-sm font-medium text-slate-900 transition-colors hover:text-blue-600"
               >
                 {link.name}
+                {link.icon}
               </a>
             ))}
           </nav>
 
-          <Button>
-            {button.text}
-          </Button>
+          <Button>{button.text}</Button>
         </div>
       </Container>
     </header>
