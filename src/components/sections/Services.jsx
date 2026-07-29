@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "@/components/ui/Container";
 
 const iconBgColors = [
   "bg-gradient-to-br from-fuchsia-400 to-purple-500 shadow-purple-200",
@@ -15,7 +16,7 @@ export default function Services({ services = [], partners = [] }) {
 
   return (
     // <section className="relative bg-transparent pb-24 z-10 px-4 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <Container>
         <div className="bg-white rounded-t-[2.5rem] border-t-2 border-x-2 border-slate-100 p-8 md:p-16">
           {/* Services Section */}
           {showServices && (
@@ -49,12 +50,10 @@ export default function Services({ services = [], partners = [] }) {
             </div>
           )}
 
-          {/* Spacer between Services and Partners */}
           {showServices && showPartners && (
-            <div className="my-16 border-t border-slate-100/60" />
+            <div className="my-8 md:my-16 border-t border-slate-100/60" />
           )}
 
-          {/* Partners Section */}
           {showPartners && (
             <div className="flex flex-col items-center">
               <h2 className="text-center w-3/4 text-2xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">
@@ -80,7 +79,7 @@ export default function Services({ services = [], partners = [] }) {
             </div>
           )}
         </div>
-      </div>
+      </Container>
     // </section>
   );
 }
