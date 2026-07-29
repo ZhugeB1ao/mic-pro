@@ -1,25 +1,16 @@
 import { useState, useEffect } from "react";
-import AgencyLayout from "@/components/layout/Agency";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Expertise from "@/components/sections/Expertise";
-import Pricing from "@/components/sections/Pricing";
-import Testimonials from "@/components/sections/Testimonials";
-import Team from "@/components/sections/Team";
-import Blog from "@/components/sections/Blog";
-import CallToAction from "@/components/sections/CallToAction";
+import CharityLayout from "@/components/layout/Charity";
 
-export default function Agency() {
+export default function Charity() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/api/agency")
+    fetch("/api/charity")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Failed to fetch agency data");
+          throw new Error("Failed to fetch charity data");
         }
         return res.json();
       })
@@ -34,13 +25,13 @@ export default function Agency() {
   }, []);
 
   return (
-    <AgencyLayout>
+    <CharityLayout>
       {loading ? (
         <div className="flex min-h-[50vh] items-center justify-center bg-white">
           <div className="flex flex-col items-center gap-4">
             <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
             <p className="text-sm font-semibold text-slate-500">
-              Loading agency content...
+              Loading charity content...
             </p>
           </div>
         </div>
@@ -62,30 +53,12 @@ export default function Agency() {
               <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
               <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
             </div>
-            <div className="relative z-10">
-              <Hero />
-            </div>
+            
           </div>
 
-          <div className="bg-transparent absolute z-20 top-3/4 left-0 w-full">
-            <Services services={data?.services} partners={data?.partners} />
-          </div>
-
-          <Portfolio portfolio={data?.portfolio} />
-
-          <Expertise expertise={data?.expertise} />
-
-          <Pricing pricing={data?.pricing} />
-
-          <Testimonials testimonials={data?.testimonials} />
-
-          <Team team={data?.team} />
-
-          <Blog blogs={data?.blogs} />
-
-          <CallToAction />
+          
         </>
       )}
-    </AgencyLayout>
+    </CharityLayout>
   );
 }

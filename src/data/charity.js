@@ -3,27 +3,27 @@ export const charityData = {
     {
       id: 1,
       name: "Slack",
-      logo: "/images/logos/slack.svg",
+      logo: "/charity/logos/slack.png",
     },
     {
       id: 2,
       name: "Amazon",
-      logo: "/images/logos/amazon.svg",
+      logo: "/charity/logos/amazon.png",
     },
     {
       id: 3,
       name: "WooCommerce",
-      logo: "/images/logos/woocommerce.svg",
+      logo: "/charity/logos/woocommerce.png",
     },
     {
       id: 4,
       name: "Airwallex",
-      logo: "/images/logos/airwallex.svg",
+      logo: "/charity/logos/airwallex.png",
     },
     {
       id: 5,
       name: "Ghost",
-      logo: "/images/logos/ghost.svg",
+      logo: "/charity/logos/ghost.png",
     },
   ],
 
@@ -55,12 +55,11 @@ export const charityData = {
   ],
 
   support: {
-    title: "We are here to support the",
-    highlight: "vulnerable.",
+    title: "We are here to support the vulnerable.",
     description:
       "Transform the way you work with one place for everyone and everything you need to get stuff done.",
 
-    image: "/images/charity/support-dashboard.png",
+    image: "/charity/images/about-mission/support-dashboard.png",
 
     features: [
       {
@@ -79,56 +78,50 @@ export const charityData = {
   },
 
   video: {
-    thumbnail: "/images/charity/video-thumbnail.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    thumbnail: "/charity/images/video-thumbnail.jpg",
   },
 
   donors: [
     {
       id: 1,
-      avatar: "/images/avatar/avatar-1.png",
+      avatar: "/charity/images/avatar-1.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
     {
       id: 2,
-      avatar: "/images/avatar/avatar-2.png",
+      avatar: "/charity/images/avatar-2.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
     {
       id: 3,
-      avatar: "/images/avatar/avatar-3.png",
+      avatar: "/charity/images/avatar-3.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
     {
       id: 4,
-      avatar: "/images/avatar/avatar-4.png",
+      avatar: "/charity/images/avatar-4.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
     {
       id: 5,
-      avatar: "/images/avatar/avatar-5.png",
+      avatar: "/charity/images/avatar-5.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
     {
       id: 6,
-      avatar: "/images/avatar/avatar-6.png",
+      avatar: "/charity/images/avatar-6.png",
       name: "Micle James",
       amount: "$1,225.00",
     },
   ],
 
   impact: {
-    title: "We're here to help our Earth",
-    highlight: "breathe again.",
-    description:
-      "Voluptatem accusantium doloremque laudantium rem aperiam, eaque ipsa quae ab illo.",
-
-    image: "/images/charity/earth.jpg",
+    image: "/charity/images/earth.jpg",
 
     statistics: [
       {
@@ -157,27 +150,27 @@ export const charityData = {
   testimonials: [
     {
       id: 1,
-      avatar: "/images/avatar/avatar-7.png",
+      avatar: "/charity/images/testimonials/avatar-7.png",
       name: "Joe Root",
       role: "Head of Design at AMA",
       quote:
-        "I recently had to jump on 10+ different calls across eight different countries to find the right volunteer.",
+        "I recently had to jump on 10+ different calls across eight different countries to find the right owner.",
     },
     {
       id: 2,
-      avatar: "/images/avatar/avatar-8.png",
+      avatar: "/charity/images/testimonials/avatar-8.png",
       name: "Billy Root",
       role: "Web Designer at AMA",
       quote:
-        "Excellent collaboration and smooth communication. Everything was organized and efficient.",
+        "I recently had to jump on 10+ different calls across eight different countries to find the right.",
     },
     {
       id: 3,
-      avatar: "/images/avatar/avatar-9.png",
+      avatar: "/charity/images/testimonials/avatar-9.png",
       name: "Sarah Root",
       role: "UI Designer at AMA",
       quote:
-        "The platform made it easy to connect with volunteers and manage every campaign effectively.",
+        "I recently had to jump on 10+ different calls across eight different countries to find the right owner.",
     },
   ],
 
@@ -185,7 +178,7 @@ export const charityData = {
     {
       id: 1,
       category: "Donation",
-      image: "/images/news/news-1.jpg",
+      image: "/charity/images/news/news-1.jpg",
       title: "Why Are Forest So Important For Earth?",
       description: "",
       href: "#",
@@ -193,7 +186,7 @@ export const charityData = {
     {
       id: 2,
       category: "Donation",
-      image: "/images/news/news-2.jpg",
+      image: "/charity/images/news/news-2.jpg",
       title: "What To Donate To A Food Bank & What To Avoid.",
       description: "",
       href: "#",
@@ -201,7 +194,7 @@ export const charityData = {
     {
       id: 3,
       category: "Donation",
-      image: "/images/news/news-3.jpg",
+      image: "/charity/images/news/news-3.jpg",
       title: "What To Donate To A Food Bank & What To Avoid.",
       description: "",
       href: "#",
