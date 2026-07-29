@@ -108,7 +108,7 @@ const defaultColumns = [
 const defaultBottom = {
   type: "node",
   content: (
-    <div className="flex items-center justify-between gap-4 sm:flex-row">
+    <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-center md:justify-between md:gap-4">
       <ul className="flex flex-wrap gap-4">
         <li className="text-xs text-slate-500">Platform</li>
         <li className="text-xs text-slate-500">Products</li>

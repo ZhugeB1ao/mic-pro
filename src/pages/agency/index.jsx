@@ -3,6 +3,12 @@ import AgencyLayout from "@/components/layout/Agency";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Portfolio from "@/components/sections/Portfolio";
+import Expertise from "@/components/sections/Expertise";
+import Pricing from "@/components/sections/Pricing";
+import Testimonials from "@/components/sections/Testimonials";
+import Team from "@/components/sections/Team";
+import Blog from "@/components/sections/Blog";
+import CallToAction from "@/components/sections/CallToAction";
 
 export default function Agency() {
   const [data, setData] = useState(null);
@@ -68,13 +74,22 @@ export default function Agency() {
 
           {/* Services and Partners on plain white background, overlapping the Hero slightly */}
           <div className="bg-transparent absolute z-20 top-3/4 left-0 w-full">
-            <Services
-              services={data?.services}
-              partners={data?.partners}
-            />
+            <Services services={data?.services} partners={data?.partners} />
           </div>
 
           <Portfolio portfolio={data?.portfolio} />
+
+          <Expertise expertise={data?.expertise} />
+
+          <Pricing pricing={data?.pricing} />
+
+          <Testimonials testimonials={data?.testimonials} />
+
+          <Team team={data?.team} />
+
+          <Blog blogs={data?.blogs} />
+
+          <CallToAction />
         </>
       )}
     </AgencyLayout>

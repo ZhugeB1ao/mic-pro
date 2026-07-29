@@ -1,13 +1,14 @@
 const variants = {
   primary: "bg-blue-600 text-white hover:bg-blue-500",
   outline: "border border-[#1F2326] text-[#1F2326] hover:bg-[#1F2326]-50",
-  light: "bg-slate-100 text-slate-900 hover:bg-slate-200",
+  light: "bg-white text-slate-900 hover:bg-slate-200",
   dark: "bg-slate-900 text-white hover:bg-slate-800",
+  gradientOutline: "text-[#1F2326] hover:opacity-90"
 };
 
 const geometries = {
   rounded: "rounded-full",
-  square: "rounded-sm",
+  square: "rounded-md",
 };
 
 export default function Button({
@@ -17,6 +18,15 @@ export default function Button({
   children,
   ...props
 }) {
+  const gradientStyle =
+    variant === "gradientOutline"
+      ? {
+          border: "2px solid transparent",
+          background:
+            "linear-gradient(#EAEDF9, #EAEDF9) padding-box, linear-gradient(90deg,#5F45D9,#F961D8,#FE9E66) border-box",
+        }
+      : {};
+
   const classes = [
     "inline-flex items-center justify-center py-3 px-7 gap-2",
     "whitespace-nowrap font-semibold transition-colors duration-200",
@@ -27,7 +37,7 @@ export default function Button({
   ].join(" ");
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} style={gradientStyle} {...props}>
       {children}
     </button>
   );
