@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import AgencyLayout from "@/components/layout/Agency";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Expertise from "@/components/sections/Expertise";
-import Pricing from "@/components/sections/Pricing";
-import Testimonials from "@/components/sections/Testimonials";
-import Team from "@/components/sections/Team";
-import Blog from "@/components/sections/Blog";
-import CallToAction from "@/components/sections/CallToAction";
+import Hero from "@/components/sections/agency/Hero";
+import Services from "@/components/sections/agency/Services";
+import Portfolio from "@/components/sections/agency/Portfolio";
+import Expertise from "@/components/sections/agency/Expertise";
+import Pricing from "@/components/sections/agency/Pricing";
+import Testimonials from "@/components/sections/agency/Testimonials";
+import Team from "@/components/sections/agency/Team";
+import Blog from "@/components/sections/agency/Blog";
+import CallToAction from "@/components/sections/agency/CallToAction";
 
 export default function Agency() {
   const [data, setData] = useState(null);

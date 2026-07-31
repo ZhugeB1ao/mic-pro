@@ -6,7 +6,7 @@ export default function CallToAction() {
   return (
     <section className="bg-white py-10 md:py-16">
       <Container>
-        <div className="overflow-hidden rounded-[1.75rem] bg-[linear-gradient(135deg,#6970FF_0%,#7A58F0_48%,#C05CF2_100%)] px-6 py-12 text-center text-white shadow-[0_28px_80px_rgba(109,92,255,0.28)] md:px-16 md:py-16">
+        <div className="overflow-hidden rounded-[1.75rem] bg-[linear-gradient(135deg,#6970FF_0%,#7A58F0_48%,#C05CF2_100%)] px-6 py-12 text-center text-white md:px-16 md:py-16">
           <h2 className="mx-auto max-w-4xl text-2xl font-semibold leading-tight sm:text-3xl md:text-[2.6rem] md:leading-[1.15]">
             We&apos;ll take the time to understand your goals and then help you create a website that&apos;s exactly what you envisioned.
           </h2>

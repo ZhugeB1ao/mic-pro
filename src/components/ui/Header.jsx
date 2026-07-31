@@ -36,6 +36,7 @@ export default function Header({
               alt="MicPro logo"
               width={40}
               height={40}
+              unoptimized
               className="h-10 w-10 shrink-0"
             />
             <h2 className="text-2xl font-semibold text-slate-900">MicPro</h2>

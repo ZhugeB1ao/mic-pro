@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
 import CharityLayout from "@/components/layout/Charity";
+import Hero from "@/components/sections/charity/Hero";
+import Partners from "@/components/sections/charity/Partners";
+import AboutMission from "@/components/sections/charity/AboutMission";
+import Donation from "@/components/sections/charity/Donation";
+import Donors from "@/components/sections/charity/Donors";
+import Statistics from "@/components/sections/charity/Statistics";
+import Testimonials from "@/components/sections/charity/Testimonials";
+import News from "@/components/sections/charity/News";
+import VolunteerCta from "@/components/sections/charity/VolunteerCta";
 
 export default function Charity() {
   const [data, setData] = useState(null);
@@ -46,17 +55,26 @@ export default function Charity() {
         </div>
       ) : (
         <>
-          <div className="relative overflow-hidden bg-white pt-12 pb-24 md:pt-18 md:pb-96">
+          <div className="relative overflow-hidden bg-white pt-12 pb-16 md:pt-18 md:pb-24">
             <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
               <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
               <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
               <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
               <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
             </div>
-            
+            <div className="relative z-10">
+              <Hero />
+            </div>
           </div>
 
-          
+          <Partners services={data.services} partners={data.partners} />
+          <AboutMission support={data.support} />
+          <Donation video={data.video} />
+          <Donors donors={data.donors} />
+          <Statistics impact={data.impact} />
+          <Testimonials testimonials={data.testimonials} />
+          <News news={data.news} />
+          <VolunteerCta />
         </>
       )}
     </CharityLayout>
