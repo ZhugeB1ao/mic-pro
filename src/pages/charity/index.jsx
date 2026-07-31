@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
-import AgencyLayout from "@/components/layout/Agency";
-import Hero from "@/components/sections/agency/Hero";
-import Services from "@/components/sections/agency/Services";
-import Portfolio from "@/components/sections/agency/Portfolio";
-import Expertise from "@/components/sections/agency/Expertise";
-import Pricing from "@/components/sections/agency/Pricing";
-import Testimonials from "@/components/sections/agency/Testimonials";
-import Team from "@/components/sections/agency/Team";
-import Blog from "@/components/sections/agency/Blog";
-import CallToAction from "@/components/sections/agency/CallToAction";
+import CharityLayout from "@/components/layout/Charity";
+import Hero from "@/components/sections/charity/Hero";
+import Partners from "@/components/sections/charity/Partners";
+import AboutMission from "@/components/sections/charity/AboutMission";
+import Donation from "@/components/sections/charity/Donation";
+import Donors from "@/components/sections/charity/Donors";
+import Statistics from "@/components/sections/charity/Statistics";
+import Testimonials from "@/components/sections/charity/Testimonials";
+import News from "@/components/sections/charity/News";
+import VolunteerCta from "@/components/sections/charity/VolunteerCta";
 
-export default function Agency() {
+export default function Charity() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/api/agency")
+    fetch("/api/charity")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Failed to fetch agency data");
+          throw new Error("Failed to fetch charity data");
         }
         return res.json();
       })
@@ -34,13 +34,13 @@ export default function Agency() {
   }, []);
 
   return (
-    <AgencyLayout>
+    <CharityLayout>
       {loading ? (
         <div className="flex min-h-[50vh] items-center justify-center bg-white">
           <div className="flex flex-col items-center gap-4">
             <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
             <p className="text-sm font-semibold text-slate-500">
-              Loading agency content...
+              Loading charity content...
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Agency() {
         </div>
       ) : (
         <>
-          <div className="relative overflow-hidden bg-white pt-12 pb-24 md:pt-18 md:pb-96">
+          <div className="relative overflow-hidden bg-white pt-12 pb-16 md:pt-18 md:pb-24">
             <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
               <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
               <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
@@ -67,25 +67,16 @@ export default function Agency() {
             </div>
           </div>
 
-          <div className="bg-transparent absolute z-20 top-3/4 left-0 w-full">
-            <Services services={data?.services} partners={data?.partners} />
-          </div>
-
-          <Portfolio portfolio={data?.portfolio} />
-
-          <Expertise expertise={data?.expertise} />
-
-          <Pricing pricing={data?.pricing} />
-
-          <Testimonials testimonials={data?.testimonials} />
-
-          <Team team={data?.team} />
-
-          <Blog blogs={data?.blogs} />
-
-          <CallToAction />
+          <Partners services={data.services} partners={data.partners} />
+          <AboutMission support={data.support} />
+          <Donation video={data.video} />
+          <Donors donors={data.donors} />
+          <Statistics impact={data.impact} />
+          <Testimonials testimonials={data.testimonials} />
+          <News news={data.news} />
+          <VolunteerCta />
         </>
       )}
-    </AgencyLayout>
+    </CharityLayout>
   );
 }
