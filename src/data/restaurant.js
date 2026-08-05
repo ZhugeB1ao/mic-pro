@@ -1,22 +1,34 @@
 export const restaurantData = {
+  hero: {
+    title: "The Best way to grow your",
+    highlightWord: "Business",
+    description:
+      "Imagine you don't need a diet because we provide healthy and delicious food for you! We are providing the best food delivery services.",
+    googlePlayImage: "/restaurant/logos/google-play.png",
+    googlePlayLink: "#playstore",
+    appStoreImage: "/restaurant/logos/app-store.png",
+    appStoreLink: "#appstore",
+    dashboardImage: "/restaurant/images/hero/dashboard.png",
+  },
+
   features: [
     {
       id: 1,
-      image: "/images/features/recipe-1.jpg",
+      image: "/restaurant/images/features/recipe-1.png",
       title: "Exquisite Recipe",
-      description: "Phasellus risus turpis sit amet magna.",
+      description: "Phasollus risus turpis sit arnot magna non.",
     },
     {
       id: 2,
-      image: "/images/features/recipe-2.jpg",
+      image: "/restaurant/images/features/recipe-2.png",
       title: "Crispy Baked",
-      description: "Phasellus risus turpis sit amet magna.",
+      description: "Phasollus risus turpis sit arnot magna non.",
     },
     {
       id: 3,
-      image: "/images/features/recipe-3.jpg",
+      image: "/restaurant/images/features/recipe-3.png",
       title: "Pasta Recipe",
-      description: "Phasellus risus turpis sit amet magna.",
+      description: "Phasollus risus turpis sit arnot magna non.",
     },
   ],
 
@@ -41,49 +53,49 @@ export const restaurantData = {
   popularFoods: [
     {
       id: 1,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
     {
       id: 2,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
     {
       id: 3,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
     {
       id: 4,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
     {
       id: 5,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
     {
       id: 6,
-      image: "/images/foods/chicken-curry.jpg",
+      image: "/restaurant/images/menu/chicken.png",
       title: "Chicken Curry",
-      description: "Lorem ipsum dolor sit amet.",
+      description: "1234 elgin st. Celina, newyork city 7894",
       price: 88,
       currency: "$",
     },
@@ -91,7 +103,7 @@ export const restaurantData = {
 
   offers: {
     banner: {
-      image: "/images/offers/banner.jpg",
+      image: "/restaurant/images/offer/luch-time.png",
       title: "Lunch Time",
       discount: "30%",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -101,23 +113,23 @@ export const restaurantData = {
     foods: [
       {
         id: 1,
-        image: "/images/foods/spicy-club.jpg",
+        image: "/restaurant/images/offer/spicy-club.png",
         title: "Spicy Club",
-        description: "Lorem ipsum dolor sit amet.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu.",
         price: 42,
       },
       {
         id: 2,
-        image: "/images/foods/spicy-salad.jpg",
+        image: "/restaurant/images/offer/spicy-salad.png",
         title: "Spicy Salad",
-        description: "Lorem ipsum dolor sit amet.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu.",
         price: 42,
       },
       {
         id: 3,
-        image: "/images/foods/chicken-grill.jpg",
+        image: "/restaurant/images/offer/chicken-grill.png",
         title: "Chicken Grill",
-        description: "Lorem ipsum dolor sit amet.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu.",
         price: 42,
       },
     ],
@@ -126,26 +138,26 @@ export const restaurantData = {
   blogs: [
     {
       id: 1,
-      image: "/images/blog/blog-1.jpg",
+      image: "/restaurant/images/blog/rice-bowl.png",
       category: "Blog 01",
       title: "How to make a rice bowl?",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur so adipiscing elit, sed do eiusmod tempor the incididunt ut labore...",
       href: "#",
     },
     {
       id: 2,
-      image: "/images/blog/blog-2.jpg",
+      image: "/restaurant/images/blog/pizza.png",
       category: "Blog 02",
       title: "Get the pizza of the week.",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur so adipiscing elit, sed do eiusmod tempor the incididunt ut labore...",
       href: "#",
     },
     {
       id: 3,
-      image: "/images/blog/blog-3.jpg",
+      image: "/restaurant/images/blog/burger.png",
       category: "Blog 03",
       title: "Make your burger like this.",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur so adipiscing elit, sed do eiusmod tempor the incididunt ut labore...",
       href: "#",
     },
   ],
@@ -153,21 +165,37 @@ export const restaurantData = {
   testimonials: [
     {
       id: 1,
-      avatar: "/images/avatar/avatar-1.png",
-      name: "John Shiffman",
-      role: "CEO, Shopify Ltd.",
+      avatar: "/restaurant/images/testimonials/man-1.png",
+      name: "Yaron Shifman",
+      role: "CEO, Swathly Ltd.",
       rating: 5,
       comment:
-        "I'm very pleased with their work. They delivered the project efficiently and communicated throughout the process.",
+        "I’m very pleased with their work. When I need help with any aspect of development, I’m able to call on them to take care of it. They’re professional and complete tasks in a timely manner.",
     },
     {
       id: 2,
-      avatar: "/images/avatar/avatar-2.png",
-      name: "Emma Weber",
-      role: "Founder, Fine Food",
+      avatar: "/restaurant/images/testimonials/man-2.png",
+      name: "Elmo Weber",
+      role: "Founder, Fair Food",
       rating: 5,
       comment:
-        "Everything was delivered on schedule. The system is easy to use and helps us manage our restaurant effectively.",
+        "Scopic has never let me down. I’m pleased with our partnership and they consistently develop reliable applications. They estimate a range of hours for each project and they manage it efficiently.",
     },
   ],
+
+  cta: {
+    badge: "$20 discount for your first order",
+    title: "Join our newsletter and get updates",
+    description:
+      "Join our email subscription now to get updates on promotoions and coupons.",
+    image: "/restaurant/images/cta/burger.png",
+  },
+
+  newsletter: {
+    badge: "$20 discount for your first order",
+    title: "Join our newsletter and get updates",
+    description:
+      "Join our email subscription now to get updates on promotoions and coupons.",
+    image: "/restaurant/images/cta/burger.png",
+  },
 };
