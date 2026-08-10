@@ -7,25 +7,25 @@ function FooterLinks({ title, links }) {
   if (!links?.length) return null;
 
   return (
-    <section className="space-y-7">
+    <div className="space-y-4">
       {title && (
-        <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-900">
+        <h3 className="text-sm sm:text-base font-bold text-slate-900">
           {title}
-        </h2>
+        </h3>
       )}
       <ul className="space-y-3">
         {links.map((item) => (
           <li key={item.link ?? item.title}>
             <a
-              className="text-xs text-slate-600 transition-colors hover:text-blue-600"
-              href={item.link}
+              className="text-xs sm:text-sm text-slate-500 transition-colors hover:text-blue-600 font-normal"
+              href={item.link || "#"}
             >
               {item.title}
             </a>
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 }
 
@@ -34,14 +34,14 @@ function FooterColumn({ column }) {
 
   if (column.content) {
     return (
-      <section className="space-y-5">
+      <div className="space-y-4">
         {column.title && (
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-900">
+          <h3 className="text-sm sm:text-base font-bold text-slate-900">
             {column.title}
-          </h2>
+          </h3>
         )}
         {column.content}
-      </section>
+      </div>
     );
   }
 
@@ -214,22 +214,33 @@ const DEFAULT_BOTTOM = {
 
 
 export default function Footer({
+  columns,
   left = DEFAULT_LEFT,
   center = DEFAULT_CENTER,
   right = DEFAULT_RIGHT,
   bottom = DEFAULT_BOTTOM,
 }) {
   return (
-    <footer className="bg-white py-12 text-slate-900">
+    <footer className="bg-white py-12 text-slate-900 border-t border-slate-100">
       <Container className="footer">
-        <div className="flex flex-col gap-10 md:flex-row md:justify-between w-full">
-          {left && <div className="flex-1 md:max-w-[280px]">{left}</div>}
-          {center && <div className="flex-[2] flex md:justify-center">{center}</div>}
-          {right && <div className="flex-1 md:max-w-sm flex md:justify-end">{right}</div>}
-        </div>
+        {columns && columns.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 w-full items-start">
+            {columns.map((column, index) => (
+              <div key={column.key || index} className="w-full">
+                <FooterColumn column={column} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col gap-10 md:flex-row md:justify-between w-full">
+            {left && <div className="flex-1 md:max-w-[280px]">{left}</div>}
+            {center && <div className="flex-[2] flex md:justify-center">{center}</div>}
+            {right && <div className="flex-1 md:max-w-sm flex md:justify-end">{right}</div>}
+          </div>
+        )}
 
         {bottom && (
-          <div className="mt-12 border-t border-slate-200 pt-6">
+          <div className="mt-12 border-t border-slate-100 pt-8">
             <FooterBottom bottom={bottom} />
           </div>
         )}

@@ -2,8 +2,9 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-export default function Blog({ blogs = [] }) {
-  if (!blogs.length) return null;
+export default function Blog({ blogs = [], data }) {
+  const items = data?.items || blogs || [];
+  if (!items.length) return null;
 
   return (
     <section className="py-20 bg-[#F4F7F9]">
@@ -11,7 +12,7 @@ export default function Blog({ blogs = [] }) {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           <div className="space-y-6 flex-1">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Our Food <span className="text-blue-600">Blog</span>
+              {data?.title || "Our Food"} <span className="text-blue-600">{data?.highlight || "Blog"}</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-sm">
               Eat the food you dream about at affordable prices. No need to come to us just call is.
@@ -26,7 +27,7 @@ export default function Blog({ blogs = [] }) {
           </div>
 
           <div className="flex-1 divide-y divide-slate-200/80">
-            {blogs.map((item) => (
+            {items.map((item) => (
               <a
                 key={item.id}
                 href={item.href || "#"}

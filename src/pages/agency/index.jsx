@@ -63,27 +63,25 @@ export default function Agency() {
               <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
             </div>
             <div className="relative z-10">
-              <Hero />
+              <Hero hero={data?.hero} data={data?.hero} />
             </div>
           </div>
 
           <div className="bg-transparent absolute z-20 top-3/4 left-0 w-full">
-            <Services services={data?.services} partners={data?.partners} />
+            <Services
+              services={data?.services?.items}
+              partners={data?.services?.partners}
+              data={data?.services}
+            />
           </div>
 
-          <Portfolio portfolio={data?.portfolio} />
-
-          <Expertise expertise={data?.expertise} />
-
-          <Pricing pricing={data?.pricing} />
-
-          <Testimonials testimonials={data?.testimonials} />
-
-          <Team team={data?.team} />
-
-          <Blog blogs={data?.blogs} />
-
-          <CallToAction />
+          <Portfolio portfolio={data?.portfolio?.items} data={data?.portfolio} />
+          <Expertise expertise={data?.expertise?.items} data={data?.expertise} />
+          <Pricing pricing={data?.pricing?.items} data={data?.pricing} />
+          <Testimonials testimonials={data?.testimonials?.items} data={data?.testimonials} />
+          <Team team={data?.team?.items} data={data?.team} />
+          <Blog blogs={data?.blogs?.items} data={data?.blogs} />
+          <CallToAction cta={data?.cta} data={data?.cta} />
         </>
       )}
     </AgencyLayout>

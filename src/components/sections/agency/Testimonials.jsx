@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { Quote, Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function Testimonials({ testimonials = [] }) {
-  if (!testimonials.length) return null;
+export default function Testimonials({ testimonials = [], data }) {
+  const list = data?.items || testimonials || [];
+  if (!list.length) return null;
 
-  const testimonial = testimonials[0];
+  const testimonial = list[0];
 
   return (
     <section className="bg-white py-20 md:py-24">

@@ -4,25 +4,26 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/common/Button";
 import { ArrowRight } from "lucide-react";
 
-export default function News({ news = [] }) {
-  if (!news.length) return null;
+export default function News({ news = [], data }) {
+  const items = data?.items || news || [];
+  if (!items.length) return null;
 
   return (
     <section className="bg-white py-20 md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-left md:text-center mb-12 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">
-            Latest News &{" "}
-            <span className="text-blue-600 font-extrabold">Campaigns</span>{" "}
+            {data?.title || "Latest News &"}{" "}
+            <span className="text-blue-600 font-extrabold">{data?.highlight || "Campaigns"}</span>{" "}
           </h2>
         </div>
 
         <div className="mt-12 grid gap-24 md:grid-cols-3">
-          {news.map((post) => (
-            <Link key={post.id} href={post.href} className="overflow-hidden">
+          {items.map((post) => (
+            <Link key={post.id} href={post.href || "#"} className="overflow-hidden">
               <div className="pb-6">
                 <span
-                  className={`inline-flex rounded-md ${post.bgColor} ${post.color} px-4 py-2 text-base font-normal tracking-[0.16em]`}
+                  className={`inline-flex rounded-md ${post.bgColor || "bg-blue-100"} ${post.color || "text-blue-600"} px-4 py-2 text-base font-normal tracking-[0.16em]`}
                 >
                   {post.category}
                 </span>

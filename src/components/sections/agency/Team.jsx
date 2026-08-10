@@ -7,24 +7,25 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-export default function Team({ team = [] }) {
-  if (!team.length) return null;
+export default function Team({ team = [], data }) {
+  const items = data?.items || team || [];
+  if (!items.length) return null;
 
   return (
     <section className="bg-white py-20 md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            Our Creative <span className="text-blue-600">Team</span>
+            {data?.title || "Our Creative"} <span className="text-blue-600">{data?.highlight || "Team"}</span>
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Flowgiri is a creative and modern theme for startups, freelancers
-            and creatives.
+            {data?.subtitle ||
+              "Flowgiri is a creative and modern theme for startups, freelancers and creatives."}
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-24">
-          {team.map((member, index) => {
+          {items.map((member, index) => {
             const isFeatured = index === 4;
 
             return (

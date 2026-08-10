@@ -63,18 +63,22 @@ export default function Charity() {
               <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
             </div>
             <div className="relative z-10">
-              <Hero />
+              <Hero hero={data?.hero} data={data?.hero} />
             </div>
           </div>
 
-          <Partners services={data.services} partners={data.partners} />
-          <AboutMission support={data.support} />
-          <Donation video={data.video} />
-          <Donors donors={data.donors} />
-          <Statistics impact={data.impact} />
-          <Testimonials testimonials={data.testimonials} />
-          <News news={data.news} />
-          <VolunteerCta />
+          <Partners
+            services={data?.partners?.services}
+            partners={data?.partners?.partners}
+            data={data?.partners}
+          />
+          <AboutMission support={data?.aboutMission} data={data?.aboutMission} />
+          <Donation video={data?.donation} data={data?.donation} />
+          <Donors donors={data?.donors?.items} data={data?.donors} />
+          <Statistics impact={data?.statistics} data={data?.statistics} />
+          <Testimonials testimonials={data?.testimonials?.items} data={data?.testimonials} />
+          <News news={data?.news?.items} data={data?.news} />
+          <VolunteerCta data={data?.volunteerCta} />
         </>
       )}
     </CharityLayout>
