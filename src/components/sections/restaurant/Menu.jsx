@@ -2,15 +2,16 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 
-export default function Menu({ popularFoods = [] }) {
-  if (!popularFoods.length) return null;
+export default function Menu({ popularFoods = [], data }) {
+  const items = data?.items || popularFoods || [];
+  if (!items.length) return null;
 
   return (
     <section className="py-20 bg-white">
       <Container>
         <div className="max-w-xl mx-auto text-center space-y-3 mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Most Ordered Food in <span className="text-blue-600">New York</span>
+            {data?.title || "Most Ordered Food in"} <span className="text-blue-600">{data?.highlight || "New York"}</span>
           </h2>
         </div>
 
@@ -22,7 +23,7 @@ export default function Menu({ popularFoods = [] }) {
           }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {popularFoods.map((food, idx) => (
+            {items.map((food, idx) => (
               <div
                 key={food.id || idx}
                 className="bg-white rounded-2xl p-4 sm:p-15 border border-slate-100/80 shadow-sm flex items-center justify-between gap-4 hover:shadow-md transition-all duration-300"

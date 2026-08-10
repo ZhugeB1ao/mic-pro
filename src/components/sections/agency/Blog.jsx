@@ -2,23 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
-export default function Blog({ blogs = [] }) {
-  if (!blogs.length) return null;
+export default function Blog({ blogs = [], data }) {
+  const items = data?.items || blogs || [];
+  if (!items.length) return null;
 
   return (
     <section className="bg-white py-20 md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            OUR Design <span className="text-blue-600">BLOG</span>
+            {data?.title || "OUR Design"} <span className="text-blue-600">{data?.highlight || "BLOG"}</span>
           </h2>
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-8">
-          {blogs.map((post) => (
+          {items.map((post) => (
             <Link
               key={post.id}
-              href={`/agency/blog/${post.id}`}
+              href={post.href || `/agency/blog/${post.id}`}
               className="group overflow-hidden rounded-md bg-white transition-all duration-300 hover:-translate-y-1 cursor-pointer hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">

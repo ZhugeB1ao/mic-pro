@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function Portfolio({ portfolio = [] }) {
-  if (!portfolio.length) return null;
+export default function Portfolio({ portfolio = [], data }) {
+  const items = data?.items || portfolio || [];
+  if (!items.length) return null;
 
   return (
     <section className="bg-white pb-24 pt-[72rem] md:pt-20 md:pb-32 ">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            Our Team’s
-            <span className="text-blue-600 font-extrabold"> Work</span>
+            {data?.title || "Our Team’s"}
+            <span className="text-blue-600 font-extrabold"> {data?.highlight || "Work"}</span>
           </h2>
         </div>
 
         <div className="mt-16 space-y-8 md:mt-20 md:space-y-10">
-          {portfolio.map((item) => {
+          {items.map((item) => {
             const isImageRight = item.layout === "image-right";
 
             return (

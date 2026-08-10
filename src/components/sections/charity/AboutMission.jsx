@@ -2,10 +2,11 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function AboutMission({ support }) {
-  if (!support) return null;
+export default function AboutMission({ support, data }) {
+  const content = support || data;
+  if (!content) return null;
 
-  const { title, description, image, features = [] } = support;
+  const { title, description, image, features = [] } = content;
 
   return (
     <section className="bg-white py-20 md:py-24">

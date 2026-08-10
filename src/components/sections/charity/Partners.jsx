@@ -8,9 +8,12 @@ const iconBgColors = [
   "bg-gradient-to-tr from-rose-400 to-pink-400 shadow-rose-100",
 ];
 
-export default function Partners({ services = [], partners = [] }) {
-  const showServices = services && services.length > 0;
-  const showPartners = partners && partners.length > 0;
+export default function Partners({ services = [], partners = [], data }) {
+  const servicesList = data?.services || services || [];
+  const partnersList = data?.partners || partners || [];
+
+  const showServices = servicesList && servicesList.length > 0;
+  const showPartners = partnersList && partnersList.length > 0;
 
   if (!showServices && !showPartners) return null;
 
@@ -19,16 +22,15 @@ export default function Partners({ services = [], partners = [] }) {
       <Container>
         <div className="flex flex-col items-center">
           <h2 className="mx-auto max-w-3xl text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-[1.15]">
-            More than{" "}
-            <span className="text-blue-600 font-extrabold">80,000+</span>{" "}
-            companies <br className="hidden sm:inline" />
-            trust Micpro
+            {data?.titlePrefix || "More than"}{" "}
+            <span className="text-blue-600 font-extrabold">{data?.titleHighlight || "80,000+"}</span>{" "}
+            {data?.titleSuffix || "companies trust Micpro"}
           </h2>
 
           {showPartners && (
             <div className="my-12 flex w-full justify-center overflow-hidden border-y border-slate-100 py-8 md:my-16 md:py-10">
               <div className="flex shrink-0 min-w-max flex-nowrap items-center justify-center gap-8 md:gap-12 lg:gap-16 px-4">
-                {partners.map((partner) => (
+                {partnersList.map((partner) => (
                   <div
                     key={partner.id}
                     className="flex shrink-0 items-center justify-center"
@@ -48,7 +50,7 @@ export default function Partners({ services = [], partners = [] }) {
 
           {showServices && (
             <div className="mt-6 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {services.map((service, index) => {
+              {servicesList.map((service, index) => {
                 const bgColor = iconBgColors[index % iconBgColors.length];
 
                 return (
@@ -87,4 +89,3 @@ export default function Partners({ services = [], partners = [] }) {
     </section>
   );
 }
-

@@ -1,16 +1,17 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 
-export default function Features({ features = [] }) {
-  if (!features.length) return null;
+export default function Features({ features = [], data }) {
+  const items = data?.items || features || [];
+  if (!items.length) return null;
 
   return (
     <section className="py-20 bg-slate-10">
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Our Special{" "}
-            <span className="text-blue-600">Features</span>
+            {data?.title || "Our Special"}{" "}
+            <span className="text-blue-600">{data?.highlight || "Features"}</span>
           </h2>
           <p className="text-xl sm:text-base text-slate-500 font-normal">
             This lesson provides a basic framework for conducting a recipe demonstration
@@ -18,7 +19,7 @@ export default function Features({ features = [] }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((item) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className="group bg-white rounded-2xl p-5 border border-slate-100 hover:border-slate-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"

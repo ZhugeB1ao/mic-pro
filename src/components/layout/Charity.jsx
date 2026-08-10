@@ -1,6 +1,5 @@
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
-import Link from "next/link";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -82,20 +81,20 @@ export default function CharityLayout({ children }) {
         links={[
           { name: "Home", href: "/" },
           {
-            name: "Causes",
-            href: "/causes",
+            name: "Services",
+            href: "/services",
             icon: <ChevronDown size={16} aria-hidden="true" />,
           },
           {
-            name: "Impact",
-            href: "/impact",
+            name: "Expertise",
+            href: "/expertise",
             icon: <ChevronDown size={16} aria-hidden="true" />,
           },
-          { name: "About", href: "/about" },
-          { name: "News", href: "/news" },
+          { name: "Cases", href: "/cases" },
+          { name: "Pricing", href: "/pricing" },
           {
-            name: "Get Involved",
-            href: "/get-involved",
+            name: "Company",
+            href: "/company",
             icon: <ChevronDown size={16} aria-hidden="true" />,
           },
         ]}

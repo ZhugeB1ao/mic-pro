@@ -71,7 +71,6 @@ export default function Header({
           </button>
         </div>
 
-        {/* Mobile menu */}
         {open && (
           <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-lg md:hidden">
             <nav className="flex flex-col gap-1">

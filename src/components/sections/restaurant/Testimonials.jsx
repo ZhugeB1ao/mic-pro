@@ -3,17 +3,18 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-export default function Testimonials({ testimonials = [] }) {
+export default function Testimonials({ testimonials = [], data }) {
   const [activeIndex, setActiveIndex] = useState(2);
+  const items = data?.items || testimonials || [];
 
-  if (!testimonials.length) return null;
+  if (!items.length) return null;
 
   return (
     <section className="py-20 bg-white">
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14 flex flex-1 flex-col items-center justify-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            What Our <span className="text-blue-600">Clients</span> Say
+            {data?.title || "What Our"} <span className="text-blue-600">{data?.highlight || "Clients"} Say</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal w-2/3">
             Here, We make almost every genre of applications. Your name it and we build it.
@@ -21,7 +22,7 @@ export default function Testimonials({ testimonials = [] }) {
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((item) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between"

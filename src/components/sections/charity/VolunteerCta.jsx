@@ -3,7 +3,9 @@ import Button from "@/components/common/Button";
 import Container from "@/components/ui/Container";
 import { ArrowRight } from "lucide-react";
 
-export default function VolunteerCta() {
+export default function VolunteerCta({ data }) {
+  const content = data;
+
   return (
     <section className="bg-white py-16 md:py-24">
       <Container>
@@ -20,21 +22,20 @@ export default function VolunteerCta() {
 
           <div className="order-1 flex flex-col items-center text-center md:order-2 md:items-start md:text-left">
             <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl md:leading-[1.15]">
-              Become a Volunteer of our charity
+              {content?.title || "Become a Volunteer of our charity"}
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 md:text-[17px]">
-              We believe your project is only as good as the team that&apos;s
-              working on it. When we work with you and your team, we know there
-              are no shortcuts to success. Your research is done; now lets get
-              down to business!
+              {content?.description ||
+                "We believe your project is only as good as the team that's working on it. When we work with you and your team, we know there are no shortcuts to success. Your research is done; now lets get down to business!"}
             </p>
 
             <div className="mt-8 flex justify-center md:justify-start">
               <Button
                 variant="light"
+                href={content?.buttonHref || "#"}
                 className="group flex items-center gap-4 rounded-xl bg-white pl-6 pr-2 py-2 text-base font-bold text-slate-900 transition-all hover:bg-slate-50"
               >
-                Join the team
+                {content?.buttonText || "Join the team"}
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A56DB] text-white transition-transform group-hover:translate-x-1">
                   <ArrowRight size={18} strokeWidth={2.5} aria-hidden="true" />
                 </div>

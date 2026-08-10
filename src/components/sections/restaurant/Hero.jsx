@@ -1,43 +1,37 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 
-export default function Hero({ hero = {} }) {
-  if (!hero.title && !hero.dashboardImage) return null;
+export default function Hero({ hero, data }) {
+  const content = hero || data || {};
+  if (!content.title && !content.dashboardImage) return null;
 
   return (
-    <section className="relative overflow-hidden bg-white pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-        <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
-        <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
-        <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
-        <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
-      </div>
-
+    <section className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
       <Container className="relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
           <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            {hero.title}{" "}
-            {hero.highlightWord && (
+            {content.title}{" "}
+            {content.highlightWord && (
               <span className="bg-gradient-to-r from-[#F961D8] to-[#1663F9] bg-clip-text text-transparent">
-                {hero.highlightWord}
+                {content.highlightWord}
               </span>
             )}
           </h1>
 
-          {hero.description && (
-            <p className="text-xl sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
-              {hero.description}
+          {content.description && (
+            <p className="text-xl sm:text-lg text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+              {content.description}
             </p>
           )}
 
           <div className="flex flex-col items-center justify-center sm:flex-row gap-4 pt-2">
-            {hero.googlePlayImage && (
+            {content.googlePlayImage && (
               <a
-                href={hero.googlePlayLink || "#"}
+                href={content.googlePlayLink || "#"}
                 className="inline-block transition-transform hover:scale-105"
               >
                 <Image
-                  src={hero.googlePlayImage}
+                  src={content.googlePlayImage}
                   alt="Get it on Google Play"
                   width={160}
                   height={48}
@@ -46,13 +40,13 @@ export default function Hero({ hero = {} }) {
               </a>
             )}
 
-            {hero.appStoreImage && (
+            {content.appStoreImage && (
               <a
-                href={hero.appStoreLink || "#"}
+                href={content.appStoreLink || "#"}
                 className="inline-block transition-transform hover:scale-105"
               >
                 <Image
-                  src={hero.appStoreImage}
+                  src={content.appStoreImage}
                   alt="Download on the App Store"
                   width={160}
                   height={48}
@@ -63,9 +57,9 @@ export default function Hero({ hero = {} }) {
           </div>
         </div>
 
-        {hero.dashboardImage && (
+        {content.dashboardImage && (
           <Image
-            src={hero.dashboardImage}
+            src={content.dashboardImage}
             alt="Restaurant Management Dashboard"
             width={1024}
             height={780}
