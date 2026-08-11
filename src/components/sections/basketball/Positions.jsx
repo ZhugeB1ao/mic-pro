@@ -26,7 +26,6 @@ export default function Positions({ positions = [], data }) {
         </div>
 
         <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-12 lg:gap-8">
-          {/* Left Column (items 1, 2, 3) */}
           <div className="space-y-6 order-1 lg:order-1 lg:col-span-4">
             {leftItems.map((item) => (
               <div
@@ -49,13 +48,10 @@ export default function Positions({ positions = [], data }) {
             ))}
           </div>
 
-          {/* Center Column - Arch Player Image */}
           <div className="flex justify-center order-3 lg:order-2 lg:col-span-4 pt-4 sm:pt-6 lg:py-4">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[3/4] flex items-end justify-center">
-              {/* Arch Background */}
               <div className="absolute inset-x-2 top-8 bottom-0 rounded-t-full bg-[linear-gradient(180deg,#2D72F9_0%,#8E4BF4_60%,#E054D6_100%)] shadow-2xl" />
 
-              {/* Player Image */}
               <div className="relative z-10 w-full h-full">
                 <Image
                   src={content.centerImage}
@@ -67,7 +63,6 @@ export default function Positions({ positions = [], data }) {
             </div>
           </div>
 
-          {/* Right Column (items 4, 5) */}
           <div className="space-y-6 order-2 lg:order-3 lg:col-span-4">
             {rightItems.map((item) => (
               <div
