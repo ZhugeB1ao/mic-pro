@@ -59,7 +59,6 @@ export default function Header({
             <Button>{button.text}</Button>
           </div>
 
-          {/* Burger menu button (mobile) */}
           <button
             type="button"
             aria-label="Toggle menu"
