@@ -13,7 +13,7 @@ export default function Expertise({ expertise = [], data }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="bg-white mb-10 md:mb-0 md:py-20">
+    <section id="expertise" className="bg-white mb-10 md:mb-0 md:py-20">
       <Container className="">
         <div className="rounded-3xl border border-slate-200 bg-slate-100 p-5 pt-4 md:p-10">
           <div className="mx-auto max-w-4xl text-center">

@@ -7,7 +7,7 @@ export default function Menu({ popularFoods = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="py-20 bg-white">
+    <section id="menu" className="py-20 bg-white">
       <Container>
         <div className="max-w-xl mx-auto text-center space-y-3 mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">

@@ -12,7 +12,7 @@ export default function Team({ team = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section id="team" className="bg-white py-20 md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">

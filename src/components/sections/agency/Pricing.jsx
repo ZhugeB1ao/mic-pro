@@ -7,7 +7,7 @@ export default function Pricing({ pricing = [], data }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="bg-[#F2F3F8] py-16">
+    <section id="pricing" className="bg-[#F2F3F8] py-16">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl md:text-5xl">

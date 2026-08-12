@@ -7,7 +7,7 @@ export default function Blog({ blogs = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="py-20 bg-[#F4F7F9]">
+    <section id="blog" className="py-20 bg-[#F4F7F9]">
       <Container>
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           <div className="space-y-6 flex-1">

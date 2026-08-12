@@ -6,7 +6,7 @@ export default function Features({ features = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="py-20 bg-slate-10">
+    <section id="features" className="py-20 bg-slate-10">
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">

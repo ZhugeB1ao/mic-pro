@@ -6,7 +6,7 @@ export default function Offers({ offers, data }) {
   if (!content.banner && (!content.foods || !content.foods.length)) return null;
 
   return (
-    <section className="py-20 bg-white">
+    <section id="offers" className="py-20 bg-white">
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">

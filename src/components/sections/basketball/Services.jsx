@@ -8,7 +8,7 @@ export default function Services({ services = [], data }) {
   if (!items.length && !content.title) return null;
 
   return (
-    <Container>
+    <Container id="services">
       <div className="bg-white rounded-t-[2.5rem] border-t-2 border-x-2 border-slate-100 p-8 md:p-16 mt-[750px] sm:mt-10">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl font-extrabold text-slate-900 md:text-4xl lg:text-5xl tracking-tight">

@@ -6,7 +6,7 @@ export default function Hero({ hero, data }) {
   const content = hero || data;
 
   return (
-    <section className="relative bg-transparent pt-16 pb-100 md:pt-24 md:pb-20">
+    <section id="hero" className="relative bg-transparent pt-16 pb-100 md:pt-24 md:pb-20">
       <Container className="flex flex-col items-center text-center">
         <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl md:leading-tight">
           {content.titleLine1} <br />

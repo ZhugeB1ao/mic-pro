@@ -14,7 +14,7 @@ export default function SellEverywhere({ sellEverywhere, data }) {
   if (!content.title) return null;
 
   return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section id="sell-everywhere" className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="absolute -left-24 top-1/2 -translate-y-1/2 w-80 sm:w-[420px] h-80 sm:h-[420px] bg-sky-200/50 rounded-full blur-3xl sm:blur-[110px] pointer-events-none -z-0" />
 
       <Container className="relative z-10">

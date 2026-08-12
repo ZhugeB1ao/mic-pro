@@ -9,7 +9,7 @@ export default function Testimonials({ testimonials = [], data }) {
   const testimonial = list[0];
 
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section id="testimonials" className="bg-white py-20 md:py-24">
       <Container>
         <div className="rounded-[1.75rem] bg-[#4E74F5] px-6 py-8 text-white shadow-[0_24px_80px_rgba(78,116,245,0.32)] md:px-24 md:py-10">
           <div className="flex flex-col-reverse md:flex-row justify-center gap-8 ">

@@ -18,7 +18,7 @@ export default function Partners({ services = [], partners = [], data }) {
   if (!showServices && !showPartners) return null;
 
   return (
-    <section className="relative bg-white py-16 md:py-24">
+    <section id="partners" className="relative bg-white py-16 md:py-24">
       <Container>
         <div className="flex flex-col items-center">
           <h2 className="mx-auto max-w-3xl text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-[1.15]">
@@ -29,11 +29,13 @@ export default function Partners({ services = [], partners = [], data }) {
 
           {showPartners && (
             <div className="my-12 flex w-full justify-center overflow-hidden border-y border-slate-100 py-8 md:my-16 md:py-10">
-              <div className="flex shrink-0 min-w-max flex-nowrap items-center justify-center gap-8 md:gap-12 lg:gap-16 px-4">
-                {partnersList.map((partner) => (
+              <div className="grid grid-cols-6 md:grid-cols-5 gap-6 md:gap-12 lg:gap-16 w-full max-w-4xl px-4">
+                {partnersList.map((partner, idx) => (
                   <div
                     key={partner.id}
-                    className="flex shrink-0 items-center justify-center"
+                    className={`flex items-center justify-center ${
+                      idx < 2 ? "col-span-3" : "col-span-2"
+                    } md:col-span-1`}
                   >
                     <Image
                       src={partner.logo}

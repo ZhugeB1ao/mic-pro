@@ -8,7 +8,7 @@ export default function Newsletter({ newsletter, data }) {
   if (!content.badge && !content.title && !content.image) return null;
 
   return (
-    <section className="py-20 bg-white">
+    <section id="newsletter" className="py-20 bg-white">
       <Container>
         <div
           className="relative overflow-hidden rounded-2xl text-white p-8 sm:p-12 lg:p-16 shadow-2xl"
