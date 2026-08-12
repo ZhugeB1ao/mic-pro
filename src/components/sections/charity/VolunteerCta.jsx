@@ -7,7 +7,7 @@ export default function VolunteerCta({ data }) {
   const content = data;
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="volunteer-cta" className="bg-white py-16 md:py-24">
       <Container>
         <div className="grid items-center gap-8 overflow-hidden rounded-[2rem] bg-[linear-gradient(243.41deg,#9A40E4_7.82%,#5C70F4_74.31%)] px-6 pt-10 pb-0 text-white shadow-[0_30px_100px_rgba(15,23,42,0.15)] md:grid-cols-2 md:p-10 lg:p-14">
           <div className="order-2 relative min-h-[260px] w-full sm:min-h-[320px] md:order-1 md:min-h-[380px]">

@@ -6,7 +6,7 @@ export default function Portfolio({ portfolio = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="bg-white pb-24 pt-[72rem] md:pt-20 md:pb-32 ">
+    <section id="portfolio" className="bg-white pb-24 pt-[72rem] md:pt-20 md:pb-32 ">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">

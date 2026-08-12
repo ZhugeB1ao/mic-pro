@@ -9,7 +9,7 @@ export default function Statistics({ impact, data }) {
   const statistics = content.statistics || content.items || [];
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="statistics" className="bg-white py-16 md:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center mb-12 md:mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-5xl md:leading-[1.15]">

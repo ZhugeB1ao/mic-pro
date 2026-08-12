@@ -7,7 +7,7 @@ export default function Testimonials({ testimonials = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="py-20 md:py-24">
+    <section id="testimonials" className="py-20 md:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-center mb-2 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">

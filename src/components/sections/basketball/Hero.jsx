@@ -8,7 +8,7 @@ export default function Hero({ hero, data }) {
   if (!content) return null;
 
   return (
-    <section className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
+    <section id="hero" className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="flex flex-col items-start lg:col-span-4">

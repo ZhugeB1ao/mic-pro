@@ -18,7 +18,7 @@ export default function Services({ services = [], partners = [], data }) {
   if (!showServices && !showPartners) return null;
 
   return (
-    <Container>
+    <Container id="services">
       <div className="bg-white rounded-t-[2.5rem] border-t-2 border-x-2 border-slate-100 p-8 md:p-16">
         {showServices && (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -7,7 +7,7 @@ export default function Donation({ video, data }) {
   if (!thumbnail) return null;
 
   return (
-    <section className="bg-none relative">
+    <section id="donation" className="bg-none relative">
       <Container className="flex justify-center">
         <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_26px_90px_rgba(15,23,42,0.14)]">
           <div className="relative aspect-[16/9] min-h-[280px] w-full">

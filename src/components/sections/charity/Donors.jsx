@@ -6,7 +6,7 @@ export default function Donors({ donors = [], data }) {
   if (!items.length) return null;
 
   return (
-    <section className="bg-[#F5F8FC] -mt-80 pb-20 pt-96">
+    <section id="donors" className="bg-[#F5F8FC] -mt-80 pb-20 pt-96">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-center mb-12 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">

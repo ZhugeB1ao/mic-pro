@@ -7,7 +7,7 @@ export default function SimilarItems({ similarItems, data }) {
   if (!content.title) return null;
 
   return (
-    <section className="relative bg-white py-16 md:py-24">
+    <section id="similar-items" className="relative bg-white py-16 md:py-24">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6 flex flex-col items-start justify-center">

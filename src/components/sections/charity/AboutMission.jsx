@@ -9,7 +9,7 @@ export default function AboutMission({ support, data }) {
   const { title, description, image, features = [] } = content;
 
   return (
-    <section className="bg-white py-20 md:py-24">
+    <section id="about-mission" className="bg-white py-20 md:py-24">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
           <h2 className="text-center w-3/4 mb-12 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">

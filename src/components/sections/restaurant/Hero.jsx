@@ -6,7 +6,7 @@ export default function Hero({ hero, data }) {
   if (!content.title && !content.dashboardImage) return null;
 
   return (
-    <section className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
+    <section id="hero" className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
       <Container className="relative z-10">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">

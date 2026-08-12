@@ -6,7 +6,7 @@ export default function Hero({ hero, data }) {
   if (!content.title) return null;
 
   return (
-    <section className="relative overflow-hidden bg-transparent pt-10 pb-16 md:pt-24 md:pb-24">
+    <section id="hero" className="relative overflow-hidden bg-transparent pt-10 pb-16 md:pt-24 md:pb-24">
       <Container className="relative z-10">
         <div className="relative mx-auto max-w-4xl text-center">
           <div className="hidden sm:block absolute -left-4 md:-left-12 lg:-left-16 top-0">

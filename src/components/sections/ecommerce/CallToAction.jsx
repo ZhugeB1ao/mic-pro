@@ -5,7 +5,7 @@ export default function CallToAction({ cta, data }) {
   if (!content.title) return null;
 
   return (
-    <section className="relative bg-white py-16 md:py-24">
+    <section id="cta" className="relative bg-white py-16 md:py-24">
       <Container>
         <div
           className="rounded-[2.5rem] p-10 sm:p-14 md:p-20 text-center text-white shadow-2xl shadow-purple-500/20"
