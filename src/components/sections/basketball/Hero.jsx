@@ -42,7 +42,6 @@ export default function Hero({ hero, data }) {
                 src={content.playerImage}
                 alt="Basketball Player Academy Hero"
                 fill
-                priority
                 className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>

@@ -80,7 +80,6 @@ export default function Hero({ hero, data }) {
                 src={content.groupImage}
                 alt="Shop the best styles in one place"
                 fill
-                priority
                 className="object-contain drop-shadow-xl hover:scale-[1.01] transition-transform duration-500"
               />
             </div>

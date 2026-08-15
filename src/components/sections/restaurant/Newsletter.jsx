@@ -27,7 +27,6 @@ export default function Newsletter({ newsletter, data }) {
                     fill
                     sizes="(max-width: 640px) 288px, 384px"
                     className="object-contain transform hover:scale-105 transition-transform duration-500"
-                    priority
                   />
                 )}
               </div>
