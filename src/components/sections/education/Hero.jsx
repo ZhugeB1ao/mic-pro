@@ -105,7 +105,6 @@ export default function Hero({ data }) {
                     sizes="(max-width: 640px) 25vw, 25vw"
                     unoptimized
                     className="object-cover object-top"
-                    priority={idx < 2}
                   />
                 </div>
               </div>

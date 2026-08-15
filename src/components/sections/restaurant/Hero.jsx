@@ -64,7 +64,6 @@ export default function Hero({ hero, data }) {
             width={1024}
             height={780}
             className="w-full h-auto object-contain mt-12"
-            priority
           />
         )}
       </Container>
