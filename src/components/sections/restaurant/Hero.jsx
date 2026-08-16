@@ -6,10 +6,10 @@ export default function Hero({ hero, data }) {
   if (!content.title && !content.dashboardImage) return null;
 
   return (
-    <section id="hero" className="relative bg-transparent pt-16 pb-12 md:pt-24 md:pb-16">
+    <section id="hero" className="relative bg-transparent pt-28 pb-12 md:pt-36 md:pb-16">
       <Container className="relative z-10">
         <div className="max-w-2xl mx-auto text-center space-y-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.2] sm:leading-tight break-words px-2">
             {content.title}{" "}
             {content.highlightWord && (
               <span className="bg-gradient-to-r from-[#F961D8] to-[#1663F9] bg-clip-text text-transparent">
@@ -19,7 +19,7 @@ export default function Hero({ hero, data }) {
           </h1>
 
           {content.description && (
-            <p className="text-xl sm:text-lg text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+            <p className="text-xs sm:text-base md:text-lg text-slate-500 max-w-2xl mx-auto font-normal leading-relaxed px-4">
               {content.description}
             </p>
           )}
@@ -35,7 +35,8 @@ export default function Hero({ hero, data }) {
                   alt="Get it on Google Play"
                   width={160}
                   height={48}
-                  className="h-14 w-auto object-contain"
+                  unoptimized
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
               </a>
             )}
@@ -50,7 +51,8 @@ export default function Hero({ hero, data }) {
                   alt="Download on the App Store"
                   width={160}
                   height={48}
-                  className="h-14 w-auto object-contain"
+                  unoptimized
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
               </a>
             )}
@@ -63,6 +65,7 @@ export default function Hero({ hero, data }) {
             alt="Restaurant Management Dashboard"
             width={1024}
             height={780}
+            unoptimized
             className="w-full h-auto object-contain mt-12"
           />
         )}
