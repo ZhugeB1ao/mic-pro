@@ -1,5 +1,5 @@
 import { ecommerceData } from "@/data/ecommerce";
 
-export async function getEcommerceData() {
+export function getEcommerceData() {
   return ecommerceData;
 }

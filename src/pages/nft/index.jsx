@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
 import NftLayout from "@/components/layout/Nft";
 import Hero from "@/components/sections/nft/Hero";
@@ -10,58 +9,43 @@ import TopSellers from "@/components/sections/nft/TopSellers";
 import TrendingCreators from "@/components/sections/nft/TrendingCreators";
 import Faq from "@/components/sections/nft/Faq";
 import Subscribe from "@/components/sections/nft/Subscribe";
+import { getNftData } from "@/services/nft";
 
-export default function NftPage() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/nft")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch NFT data");
-        return res.json();
-      })
-      .then((json) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center bg-white">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#1868FB] border-t-transparent" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center bg-white text-center px-4">
-        <p className="text-lg font-semibold text-rose-500">{error}</p>
-        <button
-          type="button"
-          onClick={() => window.location.reload()}
-          className="mt-4 rounded-xl bg-[#1868FB] px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-600 transition-colors"
-        >
-          Try Again
-        </button>
-      </div>
-    );
-  }
+export default function NftPage({ data }) {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": (data?.faq?.items || []).map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
 
   return (
     <>
       <Head>
-        <title>MicPro NFT - Discover, Buy and Sell Extraordinary Digital Art & Collectibles</title>
+        <title>MicPro NFT - Khám Phá & Giao Dịch Digital Art Độc Quyền</title>
         <meta
           name="description"
-          content="The world's leading marketplace for digital art, crypto collectibles and non-fungible tokens. Buy, sell, and discover exclusive digital items on MicPro."
+          content="Sàn giao dịch NFT hàng đầu thế giới. Mua bán, đúc NFT và sở hữu các tác phẩm nghệ thuật kỹ thuật số có bản quyền bảo mật tuyệt đối."
+        />
+        <link rel="canonical" href="https://micpro.com/nft" />
+        <meta property="og:title" content="MicPro NFT - Khám Phá & Giao Dịch Digital Art Độc Quyền" />
+        <meta
+          property="og:description"
+          content="Sàn giao dịch NFT hàng đầu thế giới. Mua bán, đúc NFT và sở hữu các tác phẩm nghệ thuật kỹ thuật số có bản quyền bảo mật tuyệt đối."
+        />
+        <meta property="og:image" content="https://micpro.com/nft/images/hero/monkey-2.png" />
+        <meta property="og:url" content="https://micpro.com/nft" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
 
@@ -94,4 +78,12 @@ export default function NftPage() {
       </NftLayout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      data: getNftData(),
+    },
+  };
 }

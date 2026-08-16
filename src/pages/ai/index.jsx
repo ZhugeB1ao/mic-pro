@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
 import AiLayout from "@/components/layout/Ai";
 import Hero from "@/components/sections/ai/Hero";
@@ -7,81 +6,73 @@ import Features from "@/components/sections/ai/Features";
 import HowItWorks from "@/components/sections/ai/HowItWorks";
 import Testimonials from "@/components/sections/ai/Testimonials";
 import Faq from "@/components/sections/ai/Faq";
+import { getAiData } from "@/services/ai";
 
-export default function AiPage() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/ai")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch AI Writer data");
-        }
-        return res.json();
-      })
-      .then((resData) => {
-        setData(resData);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+export default function AiPage({ data }) {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": (data?.faq?.items || []).map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
 
   return (
     <>
       <Head>
-        <title>{"MicPro - World's Best AI Writer for Easy Content Creation"}</title>
+        <title>MicPro AI - Tạo Nội Dung & Viết Bài Chuẩn SEO Bằng Trí Tuệ Nhân Tạo</title>
         <meta
           name="description"
-          content="Create high-quality, well-organized and SEO-optimized content 10X faster with MicPro AI Writer."
+          content="Sáng tạo nội dung chất lượng cao, chuẩn SEO và tự động hóa bài viết nhanh hơn gấp 10 lần với trợ lý AI MicPro Writer."
+        />
+        <link rel="canonical" href="https://micpro.com/ai" />
+        <meta property="og:title" content="MicPro AI - Trợ Lý Viết Bài & Sáng Tạo Nội Dung AI Thông Minh" />
+        <meta
+          property="og:description"
+          content="Sáng tạo nội dung chất lượng cao, chuẩn SEO và tự động hóa bài viết nhanh hơn gấp 10 lần với trợ lý AI MicPro Writer."
+        />
+        <meta property="og:image" content="https://micpro.com/ai/images/ai.png" />
+        <meta property="og:url" content="https://micpro.com/ai" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
 
       <AiLayout data={data?.footer}>
-        {loading ? (
-          <div className="flex min-h-[60vh] items-center justify-center bg-white">
-            <div className="flex flex-col items-center gap-4">
-              <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
-              <p className="text-sm font-semibold text-slate-500">
-                Loading AI Writer content...
-              </p>
-            </div>
+        <div className="relative overflow-hidden bg-white">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
+            <div className="absolute -left-[10%] top-[8%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.25] blur-[130px]" />
+            <div className="absolute left-[20%] top-[25%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.2] blur-[130px]" />
+            <div className="absolute left-[55%] top-[12%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.25] blur-[130px]" />
+            <div className="absolute left-[80%] top-[20%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.25] blur-[130px]" />
           </div>
-        ) : error ? (
-          <div className="flex min-h-[60vh] items-center justify-center bg-white">
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-red-600">
-                Error Loading Content
-              </h3>
-              <p className="mt-2 text-sm text-slate-500">{error}</p>
-            </div>
+          <div className="relative z-10">
+            <Hero data={data?.hero} />
           </div>
-        ) : (
-          <>
-            <div className="relative overflow-hidden bg-white">
-              <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-                <div className="absolute -left-[10%] top-[8%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.25] blur-[130px]" />
-                <div className="absolute left-[20%] top-[25%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.2] blur-[130px]" />
-                <div className="absolute left-[55%] top-[12%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.25] blur-[130px]" />
-                <div className="absolute left-[80%] top-[20%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.25] blur-[130px]" />
-              </div>
-              <div className="relative z-10">
-                <Hero data={data?.hero} />
-              </div>
-            </div>
+        </div>
 
-            <Partners data={data?.partners} />
-            <Features data={data?.features} />
-            <HowItWorks data={data?.howItWorks} />
-            <Testimonials data={data?.testimonials} />
-            <Faq data={data?.faq} />
-          </>
-        )}
+        <Partners data={data?.partners} />
+        <Features data={data?.features} />
+        <HowItWorks data={data?.howItWorks} />
+        <Testimonials data={data?.testimonials} />
+        <Faq data={data?.faq} />
       </AiLayout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      data: getAiData(),
+    },
+  };
 }
