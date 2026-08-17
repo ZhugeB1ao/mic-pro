@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const pages = [
+  { name: "Dental Clinic", href: "/dental", desc: "Comprehensive and personalized dental care services", badge: "Healthcare" },
   { name: "NFT Marketplace", href: "/nft", desc: "Discover, buy and sell extraordinary digital items", badge: "Trending" },
   { name: "Digital Agency", href: "/agency", desc: "Build your dream web with skilled development team", badge: "Popular" },
   { name: "AI Writer", href: "/ai", desc: "World's best AI writer for easy content creation", badge: "AI" },

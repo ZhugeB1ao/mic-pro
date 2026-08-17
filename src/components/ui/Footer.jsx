@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import Container from "./Container";
 import logo from "@/assets/logos/logo.svg";
@@ -14,8 +13,8 @@ function FooterLinks({ title, links }) {
         </h3>
       )}
       <ul className="space-y-3">
-        {links.map((item) => (
-          <li key={item.link ?? item.title}>
+        {links.map((item, idx) => (
+          <li key={item.title ? `${item.title}-${idx}` : idx}>
             <a
               className="text-xs sm:text-sm text-slate-500 transition-colors hover:text-blue-600 font-normal"
               href={item.link || "#"}
@@ -58,9 +57,9 @@ function FooterBottom({ bottom }) {
   if (bottom.type === "icons" && Array.isArray(bottom.items)) {
     return (
       <div className="flex flex-wrap items-center gap-3 text-slate-500">
-        {bottom.items.map((item) => (
+        {bottom.items.map((item, idx) => (
           <a
-            key={item.key ?? item.href ?? item.label}
+            key={item.key ?? item.href ?? item.label ?? idx}
             href={item.href}
             aria-label={item.label}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition-colors hover:border-blue-600 hover:text-blue-600"
@@ -79,16 +78,14 @@ function FooterBottom({ bottom }) {
   return <p className="text-xs text-slate-500">{bottom.content}</p>;
 }
 
-
 const DEFAULT_LEFT = (
   <div className="space-y-3">
     <div className="flex items-center gap-3">
-      <Image
-        src={logo}
+      <img
+        src={typeof logo === "string" ? logo : logo.src}
         alt="MicPro logo"
         width={40}
         height={40}
-        unoptimized
         className="h-10 w-10 shrink-0"
       />
       <h2 className="text-2xl font-semibold text-slate-900">MicPro</h2>
@@ -211,7 +208,6 @@ const DEFAULT_BOTTOM = {
     </div>
   ),
 };
-
 
 export default function Footer({
   columns,

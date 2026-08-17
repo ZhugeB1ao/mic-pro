@@ -1,7 +1,6 @@
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import logo from "@/assets/logos/logo.svg";
 
@@ -18,8 +17,8 @@ const ecommerceFooterColumns = [
     content: (
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <Image
-            src={logo}
+          <img
+            src={typeof logo === "string" ? logo : logo.src}
             alt="MicPro logo"
             width={40}
             height={40}
@@ -59,22 +58,22 @@ const ecommerceFooterColumns = [
     key: "technology",
     title: "Technology",
     links: [
-      { title: "CMS", link: "#" },
-      { title: "WordPress", link: "#" },
-      { title: "Drupal", link: "#" },
-      { title: "Joomla", link: "#" },
+      { title: "Security", link: "#" },
+      { title: "Cloud Backup", link: "#" },
+      { title: "PCI Compliance", link: "#" },
+      { title: "Integrations", link: "#" },
+      { title: "Pricing", link: "#" },
     ],
   },
   {
-    key: "resources",
-    title: "Resources",
+    key: "support",
+    title: "Support",
     links: [
-      { title: "help Center", link: "#" },
-      { title: "Podcast", link: "#" },
-      { title: "Blog", link: "#" },
+      { title: "Help Center", link: "#" },
       { title: "Guides", link: "#" },
-      { title: "Glossary", link: "#" },
-      { title: "Product Sell", link: "#" },
+      { title: "API Docs", link: "#" },
+      { title: "Community", link: "#" },
+      { title: "Contact Us", link: "#" },
     ],
   },
 ];
@@ -82,53 +81,34 @@ const ecommerceFooterColumns = [
 const ecommerceBottom = {
   type: "node",
   content: (
-    <div className="space-y-12 pt-6">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-        {/* Subscribe Form */}
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex w-full max-w-lg items-center rounded-full border border-slate-200/90 bg-white p-1 pl-6 shadow-xs"
-        >
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="flex-1 bg-transparent py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none"
-          />
-          <button
-            type="submit"
-            className="rounded-full bg-[#1A68F8] px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-700 shadow-md shadow-blue-500/20"
-          >
-            Subscrive
-          </button>
-        </form>
+    <div className="space-y-8">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          {socialData.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <a
+                key={idx}
+                href={item.href}
+                aria-label={item.label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white shadow-xs transition-all hover:scale-110 hover:border-slate-300"
+              >
+                <Icon size={14} className={item.color} />
+              </a>
+            );
+          })}
+        </div>
 
-        {/* Social Icons & App Store Badges Stacked */}
-        <div className="flex flex-col items-center lg:items-end gap-4">
-          {/* Social Icons */}
-          <ul className="flex items-center gap-3">
-            {socialData.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <li key={idx}>
-                  <a
-                    href={item.href}
-                    aria-label={item.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/90 bg-white shadow-xs transition-all hover:scale-105 hover:border-slate-300"
-                  >
-                    <Icon className={`${item.color} text-sm duration-300`} />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* App Badges */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+          <span className="text-xs sm:text-sm font-semibold text-slate-700">
+            Available on
+          </span>
           <div className="flex items-center gap-3">
             <a
               href="#"
               className="inline-block transition-opacity hover:opacity-85"
             >
-              <Image
+              <img
                 src="/ecommerce/logos/google-play.png"
                 alt="Get it on Google Play"
                 width={125}
@@ -136,12 +116,11 @@ const ecommerceBottom = {
                 className="h-9 w-auto object-contain"
               />
             </a>
-
             <a
               href="#"
               className="inline-block transition-opacity hover:opacity-85"
             >
-              <Image
+              <img
                 src="/ecommerce/logos/app-store.png"
                 alt="Download on the App Store"
                 width={125}
@@ -153,7 +132,6 @@ const ecommerceBottom = {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="border-t border-slate-100 pt-8 text-center text-xs sm:text-sm text-slate-400 font-normal">
         <p>© 2021 Besnik.com I All Rights Reserved</p>
       </div>

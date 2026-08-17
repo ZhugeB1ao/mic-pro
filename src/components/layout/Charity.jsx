@@ -2,7 +2,6 @@ import Header from "../ui/Header";
 import Footer from "../ui/Footer";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import logo from "../../assets/logos/logo.svg";
 
 const socialData = [
@@ -17,12 +16,11 @@ const bottomLinks = ["Platform", "Products", "Resources"];
 const left = (
   <div className="space-y-3">
     <div className="flex items-center gap-3">
-      <Image
-        src={logo}
+      <img
+        src={typeof logo === "string" ? logo : logo.src}
         alt="MicPro logo"
         width={40}
         height={40}
-        unoptimized
         className="h-10 w-10 shrink-0"
       />
       
