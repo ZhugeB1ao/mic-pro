@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Container from "./Container";
@@ -32,12 +31,11 @@ export default function Header({
       <Container className="header">
         <div className="flex items-center justify-between py-4 sm:py-5">
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <Image
-              src={logo}
+            <img
+              src={typeof logo === "string" ? logo : logo.src}
               alt="MicPro logo"
               width={40}
               height={40}
-              unoptimized
               className="h-9 w-9 sm:h-10 sm:w-10 shrink-0"
             />
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">

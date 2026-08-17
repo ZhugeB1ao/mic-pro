@@ -1,7 +1,6 @@
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import logo from "@/assets/logos/logo.svg";
 
@@ -18,8 +17,8 @@ const basketballFooterColumns = [
     content: (
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <Image
-            src={logo}
+          <img
+            src={typeof logo === "string" ? logo : logo.src}
             alt="MicPro logo"
             width={40}
             height={40}
