@@ -4,8 +4,11 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/common/Button";
 import { ArrowRight } from "lucide-react";
 
-export default function News({ news = [], data }) {
-  const items = data?.items || news || [];
+export default function News({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -13,8 +16,8 @@ export default function News({ news = [], data }) {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-left md:text-center mb-12 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">
-            {data?.title || "Latest News &"}{" "}
-            <span className="text-blue-600 font-extrabold">{data?.highlight || "Campaigns"}</span>{" "}
+            {content.title}{" "}
+            <span className="text-blue-600 font-extrabold">{content.highlight}</span>{" "}
           </h2>
         </div>
 

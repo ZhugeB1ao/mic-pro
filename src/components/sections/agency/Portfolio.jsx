@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Portfolio({ portfolio = [], data }) {
-  const items = data?.items || portfolio || [];
+export default function Portfolio({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -10,8 +13,8 @@ export default function Portfolio({ portfolio = [], data }) {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            {data?.title || "Our Team’s"}
-            <span className="text-blue-600 font-extrabold"> {data?.highlight || "Work"}</span>
+            {content.title}
+            <span className="text-blue-600 font-extrabold"> {content.highlight}</span>
           </h2>
         </div>
 

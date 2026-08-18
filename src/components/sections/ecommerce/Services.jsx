@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Services({ services = [], data }) {
-  const items = data?.items || services || [];
+export default function Services({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (

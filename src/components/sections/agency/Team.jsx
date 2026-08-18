@@ -7,8 +7,11 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-export default function Team({ team = [], data }) {
-  const items = data?.items || team || [];
+export default function Team({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -16,11 +19,10 @@ export default function Team({ team = [], data }) {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            {data?.title || "Our Creative"} <span className="text-blue-600">{data?.highlight || "Team"}</span>
+            {content.title} <span className="text-blue-600">{content.highlight}</span>
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            {data?.subtitle ||
-              "Flowgiri is a creative and modern theme for startups, freelancers and creatives."}
+            {content.subtitle}
           </p>
         </div>
 

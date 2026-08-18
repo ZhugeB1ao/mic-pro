@@ -34,22 +34,22 @@ export default function RestaurantPage({ data }) {
       <RestaurantLayout data={data?.footer}>
         <div className="relative overflow-hidden bg-white pt-12 pb-16 md:pt-18 md:pb-24">
           <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
+            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.55] blur-[120px]" />
+            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.65] blur-[120px]" />
           </div>
           <div className="relative z-10">
-            <Hero hero={data?.hero} data={data?.hero} />
+            <Hero data={data?.hero} />
           </div>
         </div>
-        <Features features={data?.features?.items} data={data?.features} />
-        <Statistics statistics={data?.statistics?.items} data={data?.statistics} />
-        <Menu popularFoods={data?.menu?.items} data={data?.menu} />
-        <Offers offers={data?.offers} data={data?.offers} />
-        <Blog blogs={data?.blogs?.items} data={data?.blogs} />
-        <Testimonials testimonials={data?.testimonials?.items} data={data?.testimonials} />
-        <Newsletter newsletter={data?.newsletter} data={data?.newsletter} />
+        <Features data={data?.features} />
+        <Statistics data={data?.statistics} />
+        <Menu data={data?.menu} />
+        <Offers data={data?.offers} />
+        <Blog data={data?.blogs} />
+        <Testimonials data={data?.testimonials} />
+        <Newsletter data={data?.newsletter} />
       </RestaurantLayout>
     </>
   );

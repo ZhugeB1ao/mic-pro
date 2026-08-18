@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Donors({ donors = [], data }) {
-  const items = data?.items || donors || [];
+export default function Donors({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -10,8 +13,8 @@ export default function Donors({ donors = [], data }) {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-center mb-12 self-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl leading-tight">
-            {data?.title || "Top"}{" "}
-            <span className="text-blue-600 font-extrabold">{data?.highlight || "Donors"}</span>{" "}
+            {content.title}{" "}
+            <span className="text-blue-600 font-extrabold">{content.highlight}</span>{" "}
           </h2>
         </div>
 

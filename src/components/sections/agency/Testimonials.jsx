@@ -2,8 +2,11 @@ import Image from "next/image";
 import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function Testimonials({ testimonials = [], data }) {
-  const list = data?.items || testimonials || [];
+export default function Testimonials({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const list = content.items || [];
   if (!list.length) return null;
 
   const testimonial = list[0];

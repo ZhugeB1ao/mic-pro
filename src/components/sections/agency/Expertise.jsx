@@ -8,9 +8,12 @@ const iconBgColors = [
   "bg-gradient-to-br from-rose-400 to-pink-500 shadow-rose-200",
 ];
 
-export default function Expertise({ expertise = [], data }) {
-  const items = data?.items || expertise || [];
-  if (!items || items.length === 0) return null;
+export default function Expertise({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <section id="expertise" className="bg-white mb-10 md:mb-0 md:py-20">
@@ -18,11 +21,10 @@ export default function Expertise({ expertise = [], data }) {
         <div className="rounded-3xl border border-slate-200 bg-slate-100 p-5 pt-4 md:p-10">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl md:text-5xl">
-              {data?.title || "Explore our core"} <span className="text-blue-600">{data?.highlight || "Expertise"}</span>
+              {content.title} <span className="text-blue-600">{content.highlight}</span>
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              {data?.subtitle ||
-                "We produce beautiful and engaging websites. Our team is mostly experienced in the design of stunning interfaces, e-commerce and marketing website development, ready to work with you on your project!"}
+              {content.subtitle}
             </p>
           </div>
 

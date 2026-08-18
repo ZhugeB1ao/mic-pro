@@ -2,8 +2,8 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { Check } from "lucide-react";
 
-export default function Benefits({ benefits, data }) {
-  const content = benefits || data;
+export default function Benefits({ data }) {
+  const content = data;
   if (!content) return null;
 
   return (

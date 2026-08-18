@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Positions({ positions = [], data }) {
-  const items = data?.items || positions || [];
-  const content = data || {};
-  if (!items.length && !content.title) return null;
+export default function Positions({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   const mid = Math.ceil(items.length / 2);
   const leftItems = items.slice(0, mid);

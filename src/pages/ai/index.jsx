@@ -49,10 +49,10 @@ export default function AiPage({ data }) {
       <AiLayout data={data?.footer}>
         <div className="relative overflow-hidden bg-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-            <div className="absolute -left-[10%] top-[8%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.25] blur-[130px]" />
-            <div className="absolute left-[20%] top-[25%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.2] blur-[130px]" />
-            <div className="absolute left-[55%] top-[12%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.25] blur-[130px]" />
-            <div className="absolute left-[80%] top-[20%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.25] blur-[130px]" />
+            <div className="absolute -left-[10%] top-[8%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[20%] top-[25%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.55] blur-[120px]" />
+            <div className="absolute left-[55%] top-[12%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[80%] top-[20%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.65] blur-[120px]" />
           </div>
           <div className="relative z-10">
             <Hero data={data?.hero} />

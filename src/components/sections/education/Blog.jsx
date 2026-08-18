@@ -27,11 +27,11 @@ export default function Blog({ data }) {
             >
               <div>
                 <div className="min-h-[28px] mb-2 flex items-center absolute -top-4 left-10">
-                  {item.badge ? (
+                  {item.badge && (
                     <span className="inline-block bg-[#FF5538] text-white text-[11px] font-bold px-5 py-2.5 rounded-full shadow-xs">
                       {item.badge}
                     </span>
-                  ) : null}
+                  )}
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-400 font-medium mb-3">

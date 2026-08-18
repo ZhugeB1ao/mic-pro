@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Hero({ hero, data }) {
-  const content = hero || data || {};
-  if (!content.title) return null;
+export default function Hero({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="hero" className="relative overflow-hidden bg-transparent pt-28 pb-16 md:pt-36 md:pb-24">

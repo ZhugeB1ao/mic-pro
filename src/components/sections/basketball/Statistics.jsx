@@ -7,8 +7,11 @@ const statsGradient = [
   "from-rose-400 to-pink-500",
 ];
 
-export default function Statistics({ statistics = [], data }) {
-  const items = data?.items || statistics || [];
+export default function Statistics({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (

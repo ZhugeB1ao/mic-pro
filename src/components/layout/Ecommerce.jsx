@@ -1,5 +1,6 @@
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { FaFacebookF, FaGoogle, FaTwitter, FaDribbble } from "react-icons/fa";
 import logo from "@/assets/logos/logo.svg";
@@ -108,7 +109,7 @@ const ecommerceBottom = {
               href="#"
               className="inline-block transition-opacity hover:opacity-85"
             >
-              <img
+              <Image
                 src="/ecommerce/logos/google-play.png"
                 alt="Get it on Google Play"
                 width={125}
@@ -120,7 +121,7 @@ const ecommerceBottom = {
               href="#"
               className="inline-block transition-opacity hover:opacity-85"
             >
-              <img
+              <Image
                 src="/ecommerce/logos/app-store.png"
                 alt="Download on the App Store"
                 width={125}

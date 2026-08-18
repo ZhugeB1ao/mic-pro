@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Programs({ programs = [], data }) {
-  const items = data?.items || programs || [];
-  const content = data || {};
-  if (!items.length && !content.title) return null;
+export default function Programs({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <section id="programs" className="relative bg-white py-16 md:py-24">

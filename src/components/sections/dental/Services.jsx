@@ -27,7 +27,7 @@ export default function Services({ data }) {
               className="rounded-3xl border border-slate-100 bg-white p-8 sm:p-10 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-slate-200/80 group"
             >
               <div className="w-16 h-16 rounded-2xl bg-blue-50/50 border border-blue-100/50 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 p-3">
-                {service.icon ? (
+                {service.icon && (
                   <Image
                     src={service.icon}
                     alt={service.title}
@@ -36,7 +36,7 @@ export default function Services({ data }) {
                     unoptimized
                     className="w-10 h-10 object-contain"
                   />
-                ) : null}
+                )}
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 tracking-tight">
