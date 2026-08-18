@@ -6,10 +6,12 @@ import { ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function Blog({ blogs = [], data }) {
-  const items = data?.items || blogs || [];
-  const content = data || {};
-  if (!items.length && !content.title) return null;
+export default function Blog({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <section id="blog" className="relative bg-white py-16 md:py-24">

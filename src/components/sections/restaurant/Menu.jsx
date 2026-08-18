@@ -2,8 +2,11 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 
-export default function Menu({ popularFoods = [], data }) {
-  const items = data?.items || popularFoods || [];
+export default function Menu({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -11,7 +14,7 @@ export default function Menu({ popularFoods = [], data }) {
       <Container>
         <div className="max-w-xl mx-auto text-center space-y-3 mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {data?.title || "Most Ordered Food in"} <span className="text-blue-600">{data?.highlight || "New York"}</span>
+            {content.title} <span className="text-blue-600">{content.highlight}</span>
           </h2>
         </div>
 

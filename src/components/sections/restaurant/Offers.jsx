@@ -1,16 +1,16 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 
-export default function Offers({ offers, data }) {
-  const content = offers || data || {};
-  if (!content.banner && (!content.foods || !content.foods.length)) return null;
+export default function Offers({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="offers" className="py-20 bg-white">
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {content.title || "Get The Best"} <span className="text-blue-600">{content.highlight || "Offer"}</span>
+            {content.title} <span className="text-blue-600">{content.highlight}</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md mx-auto">
             Eat the food you dream about at affordable prices. No need to come to us just call is.

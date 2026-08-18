@@ -50,21 +50,16 @@ export default function NftPage({ data }) {
       </Head>
 
       <NftLayout data={data?.footer}>
-        <div className="relative overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-[#51B4FA] opacity-20 blur-[130px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-32 right-1/4 h-96 w-96 rounded-full bg-[#854AEB] opacity-20 blur-[130px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-96 left-1/3 h-80 w-80 rounded-full bg-[#F8A6F0] opacity-20 blur-[120px]"
-          />
-
-          <Hero data={data?.hero} />
+        <div className="relative overflow-hidden bg-white">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
+            <div className="absolute -left-[10%] top-[10%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[20%] top-[30%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.55] blur-[120px]" />
+            <div className="absolute left-[50%] top-[15%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[75%] top-[25%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.65] blur-[120px]" />
+          </div>
+          <div className="relative z-10">
+            <Hero data={data?.hero} />
+          </div>
         </div>
 
         <Partners data={data?.partners} />

@@ -35,27 +35,23 @@ export default function CharityPage({ data }) {
       <CharityLayout data={data?.footer}>
         <div className="relative overflow-hidden bg-white pt-12 pb-16 md:pt-18 md:pb-24">
           <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
+            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.55] blur-[120px]" />
+            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.65] blur-[120px]" />
           </div>
           <div className="relative z-10">
-            <Hero hero={data?.hero} data={data?.hero} />
+            <Hero data={data?.hero} />
           </div>
         </div>
 
-        <Partners
-          services={data?.partners?.services}
-          partners={data?.partners?.partners}
-          data={data?.partners}
-        />
-        <AboutMission support={data?.aboutMission} data={data?.aboutMission} />
-        <Donation video={data?.donation} data={data?.donation} />
-        <Donors donors={data?.donors?.items} data={data?.donors} />
-        <Statistics impact={data?.statistics} data={data?.statistics} />
-        <Testimonials testimonials={data?.testimonials?.items} data={data?.testimonials} />
-        <News news={data?.news?.items} data={data?.news} />
+        <Partners data={data?.partners} />
+        <AboutMission data={data?.aboutMission} />
+        <Donation data={data?.donation} />
+        <Donors data={data?.donors} />
+        <Statistics data={data?.statistics} />
+        <Testimonials data={data?.testimonials} />
+        <News data={data?.news} />
         <VolunteerCta data={data?.volunteerCta} />
       </CharityLayout>
     </>

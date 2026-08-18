@@ -2,10 +2,12 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { ChevronRight } from "lucide-react";
 
-export default function Services({ services = [], data }) {
-  const items = data?.items || services || [];
-  const content = data || {};
-  if (!items.length && !content.title) return null;
+export default function Services({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <Container id="services">

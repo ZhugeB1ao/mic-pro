@@ -3,9 +3,10 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-export default function Testimonials({ testimonials = [], data }) {
+export default function Testimonials({ data }) {
   const [activeIndex, setActiveIndex] = useState(2);
-  const items = data?.items || testimonials || [];
+  const content = data;
+  const items = content?.items || [];
 
   if (!items.length) return null;
 

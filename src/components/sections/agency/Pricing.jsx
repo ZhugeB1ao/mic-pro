@@ -2,17 +2,20 @@ import Button from "@/components/common/Button";
 import Container from "@/components/ui/Container";
 import { Check } from "lucide-react";
 
-export default function Pricing({ pricing = [], data }) {
-  const items = data?.items || pricing || [];
-  if (!items || items.length === 0) return null;
+export default function Pricing({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <section id="pricing" className="bg-[#F2F3F8] py-16">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl md:text-5xl">
-            {data?.title || "Find the plan that fits your"}{" "}
-            <span className="text-blue-600">{data?.highlight || "budget"}</span>
+            {content.title}{" "}
+            <span className="text-blue-600">{content.highlight}</span>
           </h2>
           <div className="mt-12 flex justify-center gap-4">
             <Button>Monthly</Button>

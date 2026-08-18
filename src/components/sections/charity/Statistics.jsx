@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Statistics({ impact, data }) {
-  const content = impact || data;
+export default function Statistics({ data }) {
+  const content = data;
   if (!content) return null;
 
   const image = content.image;

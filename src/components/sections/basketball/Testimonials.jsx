@@ -3,8 +3,8 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/common/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Testimonials({ testimonials, data }) {
-  const content = testimonials || data;
+export default function Testimonials({ data }) {
+  const content = data;
   if (!content) return null;
 
   return (

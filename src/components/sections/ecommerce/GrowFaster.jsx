@@ -9,9 +9,9 @@ const CIRCLE_COLORS = [
   "bg-gradient-to-tr from-rose-400 to-pink-400 shadow-rose-100",
 ];
 
-export default function GrowFaster({ growFaster, data }) {
-  const content = growFaster || data || {};
-  if (!content.title) return null;
+export default function GrowFaster({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="grow-faster" className="relative bg-white py-16 md:py-24 overflow-hidden">

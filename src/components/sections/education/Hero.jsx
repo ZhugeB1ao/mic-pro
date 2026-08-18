@@ -46,7 +46,7 @@ export default function Hero({ data }) {
               <span className="bg-gradient-to-r from-[#F961D8] to-[#7B4DFF] bg-clip-text text-transparent">
                 {content.titleHighlight || "Knowledge"}
               </span>
-              {content.bulbImage ? (
+              {content.bulbImage && (
                 <Image
                   src={content.bulbImage}
                   alt="Lightbulb"
@@ -55,8 +55,6 @@ export default function Hero({ data }) {
                   unoptimized
                   className="inline-block w-6 sm:w-10 md:w-12 h-auto align-middle -mt-1 md:-mt-2"
                 />
-              ) : (
-                <span>{content.emoji || "💡"}</span>
               )}
             </span>
           </h1>

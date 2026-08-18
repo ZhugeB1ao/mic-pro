@@ -8,9 +8,12 @@ const iconBgColors = [
   "bg-gradient-to-br from-rose-400 to-pink-500 shadow-rose-200",
 ];
 
-export default function Services({ services = [], partners = [], data }) {
-  const servicesList = data?.items || services || [];
-  const partnersList = data?.partners || partners || [];
+export default function Services({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const servicesList = content.items || [];
+  const partnersList = content.partners || [];
 
   const showServices = servicesList && servicesList.length > 0;
   const showPartners = partnersList && partnersList.length > 0;

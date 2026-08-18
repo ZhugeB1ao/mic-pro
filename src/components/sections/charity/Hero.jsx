@@ -2,8 +2,8 @@ import Button from "@/components/common/Button";
 import Container from "@/components/ui/Container";
 import { ArrowRight, Play } from "lucide-react";
 
-export default function Hero({ hero, data }) {
-  const content = hero || data;
+export default function Hero({ data }) {
+  const content = data;
   if (!content) return null;
 
   return (
@@ -18,8 +18,7 @@ export default function Hero({ hero, data }) {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-xs sm:text-base md:text-lg leading-relaxed text-slate-500 px-4">
-          {content?.description ||
-            "Are you looking for a way to close all marketing, technical and customer support tasks for your company in one place"}
+          {content.description}
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
@@ -27,7 +26,7 @@ export default function Hero({ hero, data }) {
             variant="primary"
             className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 text-sm sm:text-base rounded-full shadow-lg shadow-blue-200"
           >
-            {content?.primaryButtonText || "Donate Now"}
+            {content.primaryButtonText}
             <ArrowRight size={18} aria-hidden="true" />
           </Button>
           <Button
@@ -40,7 +39,7 @@ export default function Hero({ hero, data }) {
               className="text-blue-500"
               fill="currentColor"
             />
-            {content?.secondaryButtonText || "Watch Video"}
+            {content.secondaryButtonText}
           </Button>
         </div>
       </Container>

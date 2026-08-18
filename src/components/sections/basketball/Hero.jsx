@@ -3,8 +3,8 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/common/Button";
 import { ArrowRight } from "lucide-react";
 
-export default function Hero({ hero, data }) {
-  const content = hero || data;
+export default function Hero({ data }) {
+  const content = data;
   if (!content) return null;
 
   return (

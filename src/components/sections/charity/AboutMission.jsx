@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function AboutMission({ support, data }) {
-  const content = support || data;
+export default function AboutMission({ data }) {
+  const content = data;
   if (!content) return null;
 
-  const { title, description, image, features = [] } = content;
+  const features = content.features || [];
 
   return (
     <section id="about-mission" className="bg-white py-20 md:py-24">
@@ -22,11 +22,11 @@ export default function AboutMission({ support, data }) {
         <div className="grid gap-0 md:gap-12 lg:grid-cols-2 items-center">
           <div className="mt-12 lg:mt-0 order-2 lg:order-2">
             <h2 className="max-w-sm text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl md:leading-tight">
-              {title}
+              {content.title}
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-8 text-slate-500 md:text-lg">
-              {description}
+              {content.description}
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -48,8 +48,8 @@ export default function AboutMission({ support, data }) {
           <div className="relative order-1 lg:order-2">
             <div className="relative aspect-[1.06] overflow-hidden">
               <Image
-                src={image}
-                alt={title}
+                src={content.image}
+                alt={content.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -9,9 +9,9 @@ const CIRCLE_COLORS = [
   "bg-gradient-to-tr from-rose-400 to-pink-400 shadow-rose-100",
 ];
 
-export default function SellEverywhere({ sellEverywhere, data }) {
-  const content = sellEverywhere || data || {};
-  if (!content.title) return null;
+export default function SellEverywhere({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="sell-everywhere" className="relative bg-white py-16 md:py-24 overflow-hidden">

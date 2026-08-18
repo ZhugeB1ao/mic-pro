@@ -1,8 +1,8 @@
 import Container from "@/components/ui/Container";
 
-export default function CallToAction({ cta, data }) {
-  const content = cta || data || {};
-  if (!content.title) return null;
+export default function CallToAction({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="cta" className="relative bg-white py-16 md:py-24">

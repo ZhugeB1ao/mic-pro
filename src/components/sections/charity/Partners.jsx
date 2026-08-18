@@ -8,9 +8,12 @@ const iconBgColors = [
   "bg-gradient-to-tr from-rose-400 to-pink-400 shadow-rose-100",
 ];
 
-export default function Partners({ services = [], partners = [], data }) {
-  const servicesList = data?.services || services || [];
-  const partnersList = data?.partners || partners || [];
+export default function Partners({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const servicesList = content.services || [];
+  const partnersList = content.partners || [];
 
   const showServices = servicesList && servicesList.length > 0;
   const showPartners = partnersList && partnersList.length > 0;
@@ -22,9 +25,9 @@ export default function Partners({ services = [], partners = [], data }) {
       <Container>
         <div className="flex flex-col items-center">
           <h2 className="mx-auto max-w-3xl text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-[1.15]">
-            {data?.titlePrefix || "More than"}{" "}
-            <span className="text-blue-600 font-extrabold">{data?.titleHighlight || "80,000+"}</span>{" "}
-            {data?.titleSuffix || "companies trust Micpro"}
+            {content.titlePrefix}{" "}
+            <span className="text-blue-600 font-extrabold">{content.titleHighlight}</span>{" "}
+            {content.titleSuffix}
           </h2>
 
           {showPartners && (

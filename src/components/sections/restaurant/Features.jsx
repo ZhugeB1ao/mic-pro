@@ -1,8 +1,11 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 
-export default function Features({ features = [], data }) {
-  const items = data?.items || features || [];
+export default function Features({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -10,8 +13,8 @@ export default function Features({ features = [], data }) {
       <Container>
         <div className="max-w-2xl mx-auto text-center space-y-3 mb-14">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {data?.title || "Our Special"}{" "}
-            <span className="text-blue-600">{data?.highlight || "Features"}</span>
+            {content.title}{" "}
+            <span className="text-blue-600">{content.highlight}</span>
           </h2>
           <p className="text-xl sm:text-base text-slate-500 font-normal">
             This lesson provides a basic framework for conducting a recipe demonstration

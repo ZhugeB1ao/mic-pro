@@ -35,31 +35,27 @@ export default function AgencyPage({ data }) {
       <AgencyLayout data={data?.footer}>
         <div className="relative overflow-hidden bg-white pt-12 pb-24 md:pt-18 md:pb-96">
           <div className="absolute inset-0 pointer-events-none overflow-hidden h-full">
-            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.5] blur-[120px]" />
-            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.5] blur-[120px]" />
+            <div className="absolute -left-[10%] top-[15%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#51B4FA] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[20%] top-[35%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-[#854AEB] opacity-[0.55] blur-[120px]" />
+            <div className="absolute left-[50%] top-[18%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-[#F8D997] opacity-[0.65] blur-[120px]" />
+            <div className="absolute left-[80%] top-[32%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[#F8A6F0] opacity-[0.65] blur-[120px]" />
           </div>
           <div className="relative z-10">
-            <Hero hero={data?.hero} data={data?.hero} />
+            <Hero data={data?.hero} />
           </div>
         </div>
 
         <div className="bg-transparent absolute z-20 top-3/4 left-0 w-full">
-          <Services
-            services={data?.services?.items}
-            partners={data?.services?.partners}
-            data={data?.services}
-          />
+          <Services data={data?.services} />
         </div>
 
-        <Portfolio portfolio={data?.portfolio?.items} data={data?.portfolio} />
-        <Expertise expertise={data?.expertise?.items} data={data?.expertise} />
-        <Pricing pricing={data?.pricing?.items} data={data?.pricing} />
-        <Testimonials testimonials={data?.testimonials?.items} data={data?.testimonials} />
-        <Team team={data?.team?.items} data={data?.team} />
-        <Blog blogs={data?.blogs?.items} data={data?.blogs} />
-        <CallToAction cta={data?.cta} data={data?.cta} />
+        <Portfolio data={data?.portfolio} />
+        <Expertise data={data?.expertise} />
+        <Pricing data={data?.pricing} />
+        <Testimonials data={data?.testimonials} />
+        <Team data={data?.team} />
+        <Blog data={data?.blogs} />
+        <CallToAction data={data?.cta} />
       </AgencyLayout>
     </>
   );

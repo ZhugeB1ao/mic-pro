@@ -3,9 +3,9 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 
-export default function Newsletter({ newsletter, data }) {
-  const content = newsletter || data || {};
-  if (!content.badge && !content.title && !content.image) return null;
+export default function Newsletter({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="newsletter" className="py-20 bg-white">

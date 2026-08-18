@@ -17,7 +17,7 @@ export default function Hero({ data }) {
           <div className="lg:col-span-6 space-y-6 sm:space-y-7 text-left">
             {content.badge && (
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-orange-100 border border-orange-100/80 shadow-xs">
-                {content.badgeIcon ? (
+                {content.badgeIcon && (
                   <Image
                     src={content.badgeIcon}
                     alt="Tooth icon"
@@ -26,8 +26,6 @@ export default function Hero({ data }) {
                     unoptimized
                     className="w-4 h-4 object-contain"
                   />
-                ) : (
-                  <span className="text-amber-500 font-bold text-sm">🦷</span>
                 )}
                 <span className="text-xs sm:text-sm font-bold text-[#FF9035]">
                   {content.badge}
@@ -50,7 +48,7 @@ export default function Hero({ data }) {
 
               {content.starIcon && (
                 <div className="flex justify-start pl-28 sm:pl-36 pt-1">
-                  <img
+                  <Image
                     src={content.starIcon}
                     alt="Star icon"
                     width={20}
@@ -136,7 +134,7 @@ export default function Hero({ data }) {
                     {content.smilePatientBadge.title}
                   </div>
                   <div className="flex items-center gap-2.5">
-                    {content.smilePatientBadge.avatarImage ? (
+                    {content.smilePatientBadge.avatarImage && (
                       <Image
                         src={content.smilePatientBadge.avatarImage}
                         alt="Smile Patients"
@@ -145,7 +143,7 @@ export default function Hero({ data }) {
                         unoptimized
                         className="h-6 w-auto object-contain"
                       />
-                    ) : null}
+                    )}
                     <div className="flex items-center text-amber-400 text-xs">
                       {Array.from({
                         length: content.smilePatientBadge.rating || 5,

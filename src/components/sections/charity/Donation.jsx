@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 
-export default function Donation({ video, data }) {
-  const content = video || data;
-  const thumbnail = content?.thumbnail;
+export default function Donation({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const thumbnail = content.thumbnail;
   if (!thumbnail) return null;
 
   return (

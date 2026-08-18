@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function SimilarItems({ similarItems, data }) {
-  const content = similarItems || data || {};
-  if (!content.title) return null;
+export default function SimilarItems({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="similar-items" className="relative bg-white py-16 md:py-24">

@@ -2,10 +2,12 @@ import Image from "next/image";
 import { Heart, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function Products({ products = [], data }) {
-  const items = data?.items || products || [];
-  const content = data || {};
-  if (!items.length && !content.title) return null;
+export default function Products({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
+  if (!items.length) return null;
 
   return (
     <section id="products" className="relative bg-white py-12 md:py-20">

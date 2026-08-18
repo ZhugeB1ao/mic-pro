@@ -1,9 +1,9 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 
-export default function Hero({ hero, data }) {
-  const content = hero || data || {};
-  if (!content.title && !content.dashboardImage) return null;
+export default function Hero({ data }) {
+  const content = data;
+  if (!content) return null;
 
   return (
     <section id="hero" className="relative bg-transparent pt-28 pb-12 md:pt-36 md:pb-16">

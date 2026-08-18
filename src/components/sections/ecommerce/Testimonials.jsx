@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 
-export default function Testimonials({ testimonials, data }) {
-  const content = testimonials || data || {};
-  if (!content.quote) return null;
+export default function Testimonials({ data }) {
+  const content = data;
+  if (!content || !content.quote) return null;
 
   return (
     <section id="testimonials" className="relative bg-white py-16 md:py-24 overflow-hidden">
@@ -14,10 +14,7 @@ export default function Testimonials({ testimonials, data }) {
             <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20">
               <div className="relative h-24 w-24 overflow-hidden rounded-full  shadow-lg bg-slate-200">
                 <Image
-                  src={
-                    content.author.avatar ||
-                    "/ecommerce/images/testimonials/mitchell-marsh.png"
-                  }
+                  src={content.author.avatar}
                   alt={content.author.name || "Testimonial author"}
                   fill
                   className="object-contain translate-y-2"

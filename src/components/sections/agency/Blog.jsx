@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
-export default function Blog({ blogs = [], data }) {
-  const items = data?.items || blogs || [];
+export default function Blog({ data }) {
+  const content = data;
+  if (!content) return null;
+
+  const items = content.items || [];
   if (!items.length) return null;
 
   return (
@@ -11,7 +14,7 @@ export default function Blog({ blogs = [], data }) {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            {data?.title || "OUR Design"} <span className="text-blue-600">{data?.highlight || "BLOG"}</span>
+            {content.title} <span className="text-blue-600">{content.highlight}</span>
           </h2>
         </div>
 
